@@ -23,6 +23,7 @@ import MakeCommand from './commands/make/Command';
 import MakeComponent from './commands/make/Component';
 import MakeController from './commands/make/Controller';
 import MakeEvent from './commands/make/Event';
+import MakeEnum from './commands/make/Enum';
 import MakeFactory from './commands/make/Factory';
 import MakeJob from './commands/make/Job';
 import MakeListener from './commands/make/Listener';
@@ -80,6 +81,7 @@ export async function activate(context: ExtensionContext) {
     { name: 'artisan.make.component', action: MakeComponent },
     { name: 'artisan.make.factory', action: MakeFactory },
     { name: 'artisan.make.event', action: MakeEvent },
+    { name: 'artisan.make.enum', action: MakeEnum },
     { name: 'artisan.make.listener', action: MakeListener },
     { name: 'artisan.make.mail', action: MakeMail },
     { name: 'artisan.make.job', action: MakeJob },
