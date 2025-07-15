@@ -1,9 +1,9 @@
 {
-  "name": "laravel-artisan",
-  "displayName": "Laravel Artisan",
+  "name": "vscode-laravel-artisan-commands",
+  "displayName": "Laravel Artisan command pallet",
   "description": "Run Laravel Artisan commands within Visual Studio Code",
   "icon": "images/icon.png",
-  "version": "0.0.31",
+  "version": "1.0.0",
   "publisher": "LaurinStapf",
   "repository": {
     "type": "git",
