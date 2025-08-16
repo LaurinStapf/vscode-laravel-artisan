@@ -1,3 +1,11 @@
+# 1.0.1
+
+- Update icon styling
+
+# 1.0.0
+
+- Added `make:enum` command
+
 # 0.0.31
 
 - Added `make:cast` command
