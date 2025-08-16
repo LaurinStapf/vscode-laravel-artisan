@@ -1,3 +1,10 @@
+# 1.0.2
+
+- Fix: `make:enum` command now mirrors Laravel's enum namepsace resolution and opens the created file from: 
+  - `App/Enums`
+  - `App/Enumerations`
+  - default: `App`
+
 # 1.0.1
 
 - Update icon styling
