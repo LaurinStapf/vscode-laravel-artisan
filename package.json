@@ -259,7 +259,7 @@
         },
         "artisan.maxBuffer": {
           "type": "number",
-          "default": 204800,
+          "default": 409600,
           "description": "Largest amount of data in bytes allowed on stdout or stderr"
         },
         "artisan.php.location": {

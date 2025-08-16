@@ -80,7 +80,7 @@ export default class Common {
     const phpLocation = config.get<string | null>('php.location', 'php');
     const dockerEnabled = config.get<boolean>('docker.enabled', false);
     const dockerCommand = config.get<string>('docker.command', null);
-    const maxBuffer = config.get<number>('maxBuffer', 1024 * 200);
+    const maxBuffer = config.get<number>('maxBuffer', 1024 * 400);
     const wsl = config.get<boolean>('wsl.enabled', false);
 
     let cmd = '';
