@@ -1,0 +1,54 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+    - laurinstapf
+body:
+    - type: input
+      id: extension_version
+      attributes:
+          label: Extension Version
+      validations:
+          required: true
+    - type: dropdown
+      id: php_binary
+      attributes:
+          label: PHP Binary
+          description: How are you running PHP on your machine?
+          options:
+              - Herd
+              - Valet
+              - Sail
+              - Docker
+              - Local PHP
+              - Other
+          default: 0
+      validations:
+          required: true
+    - type: dropdown
+      id: operating_system
+      attributes:
+          label: Operating System
+          description: What operating system are you using?
+          options:
+              - macOS
+              - Windows
+              - Linux
+              - Other
+          default: 0
+      validations:
+          required: true
+    - type: textarea
+      id: what-happened
+      attributes:
+          label: What happened?
+          description: Also tell us, what did you expect to happen?
+      validations:
+          required: true
+    - type: textarea
+      id: code_sample
+      attributes:
+          label: Mimimal Code Sample
+          description: If you can, please provide a minimal code sample that reproduces the bug.
+          render: php
