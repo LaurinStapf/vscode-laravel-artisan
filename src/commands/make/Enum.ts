@@ -1,4 +1,6 @@
 import Common from "../../Common";
+import * as path from "path";
+const fs = require('fs').promises;
 
 declare type EnumType = 'pure' | 'string' | 'integer';
 
@@ -19,9 +21,26 @@ export default class MakeEnum extends Common {
     this.execCmd(command, async info => {
       if (info.err) {
         this.showError('Could not create the enum', info.err);
-      } else {
-        await this.openFile(info.artisan.dir, '/app/Enums/' + enumName + '.php');
       }
+
+      const candidates = [
+        path.join(info.artisan.dir, "app/Enums", `${enumName}.php`),
+        path.join(info.artisan.dir, "app/Enumerations", `${enumName}.php`),
+        path.join(info.artisan.dir, "app", `${enumName}.php`),
+      ];
+
+      for (const filePath of candidates) {
+        try {
+          await fs.access(filePath);
+          const relPath = filePath.replace(info.artisan.dir, "");
+          await this.openFile(info.artisan.dir, relPath);
+          return;
+        } catch {
+          //
+        }
+      }
+
+      this.showError('Could not create the enum', info.err);
     });
   }
 }
