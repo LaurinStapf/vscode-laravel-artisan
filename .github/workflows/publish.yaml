@@ -46,4 +46,4 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
-          vsce publish --yarn false
+          vsce publish --npm false
