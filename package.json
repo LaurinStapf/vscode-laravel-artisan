@@ -1,10 +1,20 @@
 {
   "name": "vscode-laravel-artisan-commands",
+  "publisher": "laurinstapf",
   "displayName": "Laravel Artisan command pallet",
   "description": "Run Laravel Artisan commands within Visual Studio Code",
+  "version": "1.0.3",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "keywords": [
+    "laravel",
+    "artisan",
+    "php",
+    "herd"
+  ],
   "icon": "images/icon.png",
-  "version": "1.0.2",
-  "publisher": "LaurinStapf",
+  "homepage": "https://github.com/laurinstapf/vscode-laravel-artisan",
   "repository": {
     "type": "git",
     "url": "https://github.com/LaurinStapf/vscode-laravel-artisan"
@@ -12,23 +22,13 @@
   "bugs": {
     "url": "https://github.com/LaurinStapf/vscode-laravel-artisan/issues"
   },
-  "engines": {
-    "vscode": "^1.23.0"
-  },
   "categories": [
     "Other"
   ],
-  "keywords": [
-    "Laravel",
-    "Artisan",
-    "Docker",
-    "php",
-    "wsl"
-  ],
-  "main": "./out/src/extension",
   "activationEvents": [
     "workspaceContains:**/artisan"
   ],
+  "main": "./dist/extension.js",
   "contributes": {
     "menus": {
       "artisan.make.app": [
@@ -259,7 +259,7 @@
         },
         "artisan.maxBuffer": {
           "type": "number",
-          "default": 204800,
+          "default": 409600,
           "description": "Largest amount of data in bytes allowed on stdout or stderr"
         },
         "artisan.php.location": {
@@ -666,19 +666,21 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "dependencies": {
-    "rxjs": "7.8.0"
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "node esbuild.js --production",
+    "installLocal": "vsce package && code --install-extension vscode-laravel-artisan-commands-%npm_package_version%.vsix"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.44",
-    "@types/node": "^9.6.49",
-    "mocha": "^10.2.0",
-    "typescript": "^5.0.4",
-    "vscode": "^1.1.37"
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "esbuild": ">=0.25.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "rxjs": "7.8.2"
   }
 }
