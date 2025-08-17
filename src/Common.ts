@@ -1,4 +1,5 @@
 import * as cp from 'child_process';
+import * as util from 'util';
 import { join } from 'path';
 import { ProgressLocation, Selection, Uri, ViewColumn, commands, window, workspace } from 'vscode';
 import Output from './utils/Output';
@@ -88,16 +89,20 @@ export default class Common {
       command = `php artisan ${command}`;
       cmd = `${dockerCommand} ${command}`;
     } else {
-      if (phpLocation === 'php') {
-        command = `php artisan ${command}`;
-      } else {
-        // Location is in quotes so that it can support spaces in the path
-        command = `"${phpLocation}" artisan ${command}`;
-      }
-      cmd = command;
+      const phpInvoker = await this.resolvePhpInvoker({
+        dockerEnabled,
+        wsl,
+        artisanRoot
+      });
+
+      const quotedInvoker =
+        phpInvoker.includes(' ') && !phpInvoker.startsWith('herd ') ? `"${phpInvoker}"` : phpInvoker;
+
+      const base = `${quotedInvoker} artisan ${command}`;
+      cmd = base;
+      Output.command(base.trim());
     }
 
-    Output.command(command.trim());
     window.withProgress(
       {
         location: ProgressLocation.Window,
@@ -525,5 +530,84 @@ export default class Common {
         resolve(commandList);
       });
     });
+  }
+
+  private static herdCheckCache = new Map<string, 'managed' | 'unmanaged' | 'unavailable'>();
+
+  private static async isHerdManagedProject(cwd: string): Promise<boolean> {
+    const cached = this.herdCheckCache.get(cwd);
+    const exec = util.promisify(cp.exec);
+    if (cached) return cached === 'managed';
+
+    try {
+      const { stdout, stderr } = await exec('herd site-information', {
+        cwd,
+        timeout: 6000,
+        windowsHide: true,
+      });
+
+      const out = (stdout || '').trim();
+      const err = (stderr || '').trim();
+
+      if (/not recognized|command not found|No such file|CommandNotFoundException/i.test(out + err)) {
+        this.herdCheckCache.set(cwd, 'unavailable');
+        return false;
+      }
+
+      if (/Herd Desktop application is not running|Command "site-information" is not defined/i.test(out + err)) {
+        this.herdCheckCache.set(cwd, 'unavailable');
+        return false;
+      }
+
+      if (out.startsWith('[')) {
+        this.herdCheckCache.set(cwd, 'unmanaged');
+        return false;
+      }
+
+      try {
+        const json = JSON.parse(out);
+        if (json && typeof json === 'object' && !Array.isArray(json)) {
+          this.herdCheckCache.set(cwd, 'managed');
+          return true;
+        }
+      } catch {
+        this.herdCheckCache.set(cwd, 'unavailable');
+        return false;
+      }
+
+      this.herdCheckCache.set(cwd, 'unavailable');
+      return false;
+    } catch (e: any) {
+      const msg = `${e?.message || ''} ${e?.stderr || ''}`.trim();
+      if (/not recognized|command not found|No such file|CommandNotFoundException/i.test(msg)) {
+        this.herdCheckCache.set(cwd, 'unavailable');
+        return false;
+      }
+
+      this.herdCheckCache.set(cwd, 'unavailable');
+      return false;
+    }
+  }
+
+  private static async resolvePhpInvoker(opts: {
+    dockerEnabled: boolean;
+    wsl: boolean;
+    artisanRoot: string;
+  }): Promise<string> {
+    const { dockerEnabled, wsl, artisanRoot } = opts;
+    const config = workspace.getConfiguration('artisan');
+
+    if (dockerEnabled || wsl) {
+      return 'php';
+    }
+
+    const phpLocation = config.get<string | null>('php.location', 'php');
+
+    if (phpLocation && phpLocation != 'php') {
+      return phpLocation;
+    }
+
+    const isManaged = await this.isHerdManagedProject(artisanRoot);
+    return isManaged ? 'herd php' : 'php';
   }
 }
