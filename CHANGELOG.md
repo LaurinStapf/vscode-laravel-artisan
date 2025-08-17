@@ -19,6 +19,13 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 
 **Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.0.2...v1.0.3
 
+## [1.0.2]
+
+- Fix: `make:enum` command now mirrors Laravel's enum namepsace resolution and opens the created file from: 
+  - `App/Enums`
+  - `App/Enumerations`
+  - default: `App`
+
 ## [1.0.1]
 
 - Update icon styling
