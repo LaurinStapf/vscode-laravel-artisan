@@ -2,19 +2,6 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
-## v1.1.1 - 2025-08-17
-
-### What's Changed
-
-* Bump rxjs from 7.8.0 to 7.8.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/5
-* Add support for laravel herd by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/4
-
-### New Contributors
-
-* [@dependabot](https://github.com/dependabot)[bot] made their first contribution in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/5
-
-**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.0.3...v1.1.1
-
 ## v1.0.3 - 2025-08-16
 
 ### What's Changed
