@@ -1,5 +1,19 @@
 # Change Log
+
 All notable changes to the Laravel Artisan extension will be documented in this file.
+
+## v1.1.1 - 2025-08-17
+
+### What's Changed
+
+* Bump rxjs from 7.8.0 to 7.8.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/5
+* Add support for laravel herd by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/4
+
+### New Contributors
+
+* [@dependabot](https://github.com/dependabot)[bot] made their first contribution in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/5
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.0.3...v1.1.1
 
 ## v1.0.3 - 2025-08-16
 
@@ -20,19 +34,28 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 ## [0.0.31]
 
 - Added `make:cast` command
+  
 - Added `make:channel` command
+  
 - Added `make:rule` command
+  
 - Added question to `make:mail` command to ask if the mail should be markdown or not
+  
 - Added the ability to toggle Route List columns on/off
+  
 - Show progress bar when running commands
+  
   - Displayed in the status bar on the bottom left
   
 - Added context menus to the file explorer
+  
   - Right click on one of the listed folders or a child of the listed folders to see the context menu:
     - app
     - database
     - resources
     - routes
+    
+  
 
 ## [0.0.30]
 
@@ -42,6 +65,8 @@ All notable changes to the Laravel Artisan extension will be documented in this 
   - `artisan.wsl.enabled` should be set to `true` if you are using `wsl`.
   - The command will use the default `php` command unless `artisan.php.location` is set.
     - This path is based on the root of the `wsl` filesystem, **NOT** the windows filesystem.
+    
+  
 
 ## [0.0.27]
 
@@ -55,22 +80,29 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 ## [0.0.25]
 
 - Added a `maxBuffer` setting to allow for larger Artisan responses
+  
   - Default value is 200kb
   
 - Added custom default host/port settings for when running an Artisan server
+  
   - The config settings are as follows
+    
     - `"artisan.serve.defaultHost": "localhost"`
     - `"artisan.serve.defaultPort": "8000"`
     
   - These settings will be used for the following commands
+    
     - `Artisan: Start Server`
     - `Artisan: Start Server (Default Host and Port)`
+    
+  
 
 ## [0.0.24]
 
 - Added Docker support
   - Added setting `"artisan.docker.enabled": true` to enable/disable docker
   - Added setting `"artisan.docker.command": null` to execute the docker command, where `null` is replaced by the Docker command such as `"docker-compose exec app"`
+  
 
 ## [0.0.23]
 
@@ -78,18 +110,26 @@ All notable changes to the Laravel Artisan extension will be documented in this 
   - If the controller is not a basic controller, the option to reference a model is asked.
     - If the use wants to reference a model a model name is asked for.
       - If the model doesn't exist, it is automatically created.
+      
     
+  
+
 ## [0.0.22]
 
 - Added support for a custom php location: `artisan.php.location`.
 - Updated `artisan.location` setting.
   - Now only takes a string or an array of strings, which consist of artisan paths.
+    
   - These are additional paths that are not found within the artisan workspace.
+    
     - Example path: `/path/to/my/artisan-project/artisan`.
     
   - `number` was **removed** which specified a workspace number.
+    
     - Artisan files in all workspaces are now automatically detected.
+    
   
+
 ## [0.0.21]
 
 - Added `factory` and `all` to `make:model`.
@@ -100,10 +140,13 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 ## [0.0.20]
 
 - Preserve the web views: `Route List`, `List Commands`, `Migrate Status` using the new WebView API.
+  
   - This will allow for navigation away from, and then back to the tab without reloading the web view.
   
 - `Route List` will automatically update when routes are added/removed/updated.
+  
 - When clicking on a `Route List` route, the document will open and the cursor will move to the line where the function is defined.
+  
 
 ## [0.0.19]
 
@@ -117,13 +160,17 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 ## [0.0.17]
 
 - Changed exec so it changes to project root directory before running the artisan command
+  
   - This will allow artisan to be executed from it's root directory
   
 - Fix 'File Not Found' error when clicking a route action
+  
   - This can be found under `Artisan: Route List`
   
 - Moved server from child process to integrated terminal
+  
 - Removed duplicate `artisan.migrate.fresh` command
+  
 
 ## [0.0.16]
 
@@ -132,16 +179,20 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 ## [0.0.15]
 
 - Added support for multi-root workspaces
+  
   - To add a workspace add `artisan.location` to your settings file then use one of the following:
     - Use a `string` as a path to the workspace root (without `/artisan` filename)
     - Use a `number` pointing to the workspace array id (`0`, `1`, `2`, etc.)
     
   
 - Added better parameter support for optional `Artisan: Run Command` options
+  
   - TODO: Get laravel to support what parameters are optional. This currently isn't possible with the json string that is returned.
   
 - Added `Artisan: Make Test` to create artisan tests
+  
 - Added `Artisan: Make Factory` to create factories
+  
 
 ## [0.0.14]
 
