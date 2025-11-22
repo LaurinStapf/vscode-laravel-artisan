@@ -2,6 +2,15 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v1.1.1 - 2025-11-22
+
+### What's Changed
+
+* Bump typescript from 5.9.2 to 5.9.3 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/16
+* Improve migration error handling by parsing command output by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/27
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.1.0...v1.1.1
+
 ## v1.1.0 - 2025-08-17
 
 ### What's Changed
@@ -21,10 +30,11 @@ All notable changes to the Laravel Artisan extension will be documented in this 
 
 ## [1.0.2]
 
-- Fix: `make:enum` command now mirrors Laravel's enum namepsace resolution and opens the created file from: 
+- Fix: `make:enum` command now mirrors Laravel's enum namepsace resolution and opens the created file from:
   - `App/Enums`
   - `App/Enumerations`
   - default: `App`
+  
 
 ## [1.0.1]
 
