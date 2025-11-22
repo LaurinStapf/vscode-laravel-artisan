@@ -10,8 +10,10 @@ export default class Migrate extends Common {
     let command = `migrate ${seed ? '--seed' : ''} ${database.length > 0 ? '--database=' + database : ''}`
 
     this.execCmd(command, async (info) => {
-      if (info.err) {
-        this.showError('The migration failed', info.err)
+      const output = info.stdout + info.stderr;
+
+      if (info.err || /SQLSTATE|error|failed|already exists/i.test(output)) {
+        this.showError('The migration failed.', output)
       } else {
         this.showMessage('The migration has completed')
       }
