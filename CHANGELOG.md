@@ -2,6 +2,14 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v1.1.3 - 2026-01-11
+
+### What's Changed
+
+* Renaming extension [@LaurinStapf](https://github.com/LaurinStapf)
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.1.2...v1.1.3
+
 ## v1.1.2 - 2026-01-11
 
 ### What's Changed
