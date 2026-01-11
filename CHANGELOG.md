@@ -2,6 +2,16 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v1.1.2 - 2026-01-11
+
+### What's Changed
+
+* Bump [@types](https://github.com/types)/vscode from 1.106.1 to 1.107.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/30
+* Bump esbuild from 0.27.0 to 0.27.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/32
+* Merge refactoring and enhancements by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/34
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.1.1...v1.1.2
+
 ## v1.1.1 - 2025-11-22
 
 ### What's Changed
