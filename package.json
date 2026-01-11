@@ -1,7 +1,7 @@
 {
   "name": "vscode-laravel-artisan-commands",
   "publisher": "laurinstapf",
-  "displayName": "Laravel Artisan",
+  "displayName": "Laravel Artisan Runner",
   "description": "Run Laravel Artisan commands within Visual Studio Code",
   "version": "1.1.2",
   "engines": {
