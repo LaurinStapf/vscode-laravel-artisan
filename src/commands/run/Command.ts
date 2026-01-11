@@ -61,7 +61,7 @@ export default class RunCommand extends Common {
       // get a list of strings for selectable options
       let items = commands.reduce((a, v) => a.concat(v.name + ' -- ' + v.description), []);
       let cmd = await this.getListInput('Command to run', items);
-      if (!cmd) return;
+      if (!cmd) { return; }
 
       // Find the command settings from the selected option
       let commandSettings = commands.find(c => c.name === cmd.split('--')[0].trim());
@@ -93,8 +93,8 @@ export default class RunCommand extends Common {
       }
 
       // Remove empty items
-      args = args.filter(a => a != '');
-      opts = opts.filter(a => a != '');
+      args = args.filter(a => a !== '');
+      opts = opts.filter(a => a !== '');
 
       let command = `${commandSettings.name} ${args.join(' ')} ${opts.join(' ')}`;
 

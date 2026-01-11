@@ -16,7 +16,7 @@ export default class MakeController extends Common {
 
     let refModel = false;
     let modelToUse = '';
-    if (type != 'basic') {
+    if (type !== 'basic') {
       // Determine the model reference
       refModel = await this.getYesNo('Should this reference a model?');
       if (refModel) {

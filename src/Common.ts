@@ -44,8 +44,8 @@ export default class Common {
     let additionalLocations = config.get<string | null | string[]>('location');
     additionalLocations = typeof additionalLocations === 'string' ? new Array(1).concat(additionalLocations) : additionalLocations;
     let list = this.artisanFileList.concat(additionalLocations.map(i => Uri.parse(i)));
-    if (list.length === 1 && list[0].fsPath.length) return list[0].fsPath;
-    else if (list.length === 0) return 'artisan';
+    if (list.length === 1 && list[0].fsPath.length) { return list[0].fsPath; }
+    else if (list.length === 0) { return 'artisan'; };
     let artisanToUse = await Common.getListInput(
       'Which artisan should execute this command?',
       list
@@ -519,7 +519,7 @@ export default class Common {
             arguments: [],
           };
           for (let i in command.definition.options) {
-            if (['help', 'quiet', 'verbose', 'version', 'ansi', 'no-ansi', 'no-interaction', 'env'].indexOf(i) > -1) continue;
+            if (['help', 'quiet', 'verbose', 'version', 'ansi', 'no-ansi', 'no-interaction', 'env'].indexOf(i) > -1) { continue; }
             commandItem.options.push(command.definition.options[i]);
           }
           for (let i in command.definition.arguments) {
@@ -537,7 +537,7 @@ export default class Common {
   private static async isHerdManagedProject(cwd: string): Promise<boolean> {
     const cached = this.herdCheckCache.get(cwd);
     const exec = util.promisify(cp.exec);
-    if (cached) return cached === 'managed';
+    if (cached) { return cached === 'managed'; }
 
     try {
       const { stdout, stderr } = await exec('herd site-information', {
@@ -603,7 +603,7 @@ export default class Common {
 
     const phpLocation = config.get<string | null>('php.location', 'php');
 
-    if (phpLocation && phpLocation != 'php') {
+    if (phpLocation && phpLocation !== 'php') {
       return phpLocation;
     }
 
