@@ -2,6 +2,14 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v1.2.0 - 2026-01-12
+
+### What's Changed
+
+* Add parent parameter to make:controller command by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/36
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.1.3...v1.2.0
+
 ## v1.1.3 - 2026-01-11
 
 ### What's Changed
