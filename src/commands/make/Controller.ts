@@ -29,26 +29,31 @@ export default class MakeController extends Common {
             // Determine the model reference
             refModel = await this.getYesNo("Should this reference a model?");
             if (refModel) {
-                modelToUse = await this.getInput("What is the name of the model?");
+                modelToUse = await this.getInput(
+                    "What is the name of the model?",
+                );
                 modelToUseCommands.push(`--model=${modelToUse}`);
 
                 // Determine the parent model reference
-                refParent = await this.getYesNo('Should this reference a parent model?');
+                refParent = await this.getYesNo(
+                    "Should this reference a parent model?",
+                );
 
                 if (refParent) {
-                  parentToUse = await this.getInput('What is the name of the parent model?');
-                  modelToUseCommands.push(`--parent=${parentToUse}`);
+                    parentToUse = await this.getInput(
+                        "What is the name of the parent model?",
+                    );
+                    modelToUseCommands.push(`--parent=${parentToUse}`);
                 }
 
-                modelToUseCommands.push('--no-interaction');
+                modelToUseCommands.push("--no-interaction");
             }
         }
 
-        let typeCommand = type === "resource" 
-          ? "--resource" 
-          : type === "api" ? "--api" : "";
+        let typeCommand =
+            type === "resource" ? "--resource" : type === "api" ? "--api" : "";
 
-        let command = `make:controller ${ctrlName} ${typeCommand} ${modelToUseCommands.join(' ')}`;
+        let command = `make:controller ${ctrlName} ${typeCommand} ${modelToUseCommands.join(" ")}`;
 
         // Generate the controller
         this.execCmd(command, async (info) => {
