@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
-import { RegisterdCommand } from "./registeredCommands";
+import { RegisteredCommand } from "./generatedRegisteredCommands";
 
-export const commandName = (name: RegisterdCommand) => name;
+export const commandName = (name: RegisteredCommand) => name;
 
 export const openFileCommand = (
     uri: vscode.Uri,

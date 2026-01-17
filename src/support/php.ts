@@ -9,10 +9,7 @@ import {
     phpEnvironmentsThatUseRelativePaths,
 } from "./phpEnvironments";
 import { showErrorPopup } from "./popup";
-import {
-    getWorkspaceFolders,
-    projectPath,
-} from "./project";
+import { getWorkspaceFolders, projectPath } from "./project";
 
 let defaultPhpCommand: string | null = null;
 
@@ -68,7 +65,7 @@ const getPhpCommand = (): string => {
     phpEnvKey = "local";
 
     return "php";
-}
+};
 
 export const getCommand = (code: string): string => {
     const commandTemplate = getCommandTemplate();
@@ -80,7 +77,7 @@ export const getCommand = (code: string): string => {
 
 export const getCommandTemplate = (): string => {
     return config<string>("phpCommand", "") || getDefaultPhpCommand();
-}
+};
 
 export const getPhpEnv = (): PhpEnvironment => {
     if (phpEnvKey === null) {
@@ -97,7 +94,6 @@ const getDefaultPhpCommand = (): string => {
 
     return defaultPhpCommand;
 };
-
 
 export const artisan = (
     command: string,

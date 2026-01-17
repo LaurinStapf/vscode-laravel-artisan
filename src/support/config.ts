@@ -30,4 +30,4 @@ export const updateConfig = (
     return vscode.workspace
         .getConfiguration("Artisan")
         .update(key, value, configurationTarget);
-}
+};

@@ -7,7 +7,7 @@ export const ControllerMakeCommand: Command = {
         {
             name: "name",
             type: "namespace",
-            "description": "The name of the controller",
+            description: "The name of the controller",
         },
     ],
     options: [
@@ -61,5 +61,5 @@ export const ControllerMakeCommand: Command = {
         },
         ...testOptions,
         forceOption,
-    ]
-}
+    ],
+};

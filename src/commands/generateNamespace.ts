@@ -155,12 +155,12 @@ export const generateNamespaceCommand = async () => {
     const range =
         match?.index !== undefined
             ? new vscode.Range(
-                doc.positionAt(match.index),
-                doc.positionAt(match.index + match[0].length),
-            )
+                  doc.positionAt(match.index),
+                  doc.positionAt(match.index + match[0].length),
+              )
             : doc.positionAt(0);
 
     editor.edit((editBuilder) => {
         editBuilder.replace(range, replaceNamespace);
     });
-}
+};

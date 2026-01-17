@@ -28,7 +28,7 @@ export const runArtisanMakeCommand = async (
     if (outputPath) {
         openFileCommand(vscode.Uri.file(outputPath), 1, 1);
     }
-}
+};
 
 export const runArtisanCommand = async (
     command: Command,
@@ -43,7 +43,6 @@ export const runArtisanCommand = async (
     }
 
     uri ??= vscode.Uri.joinPath(workspaceFolder.uri);
-
 
     const artisanCommand = await buildArtisanCommand(
         command,
@@ -92,4 +91,4 @@ const getWorkspaceFolder = (
     }
 
     return getWorkspaceFolders()?.[0];
-}
+};

@@ -11,4 +11,4 @@ export const escapeNamespace = (namespace: string): string => {
     }
 
     return namespace;
-}
+};

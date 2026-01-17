@@ -127,6 +127,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.make.channel",
+                "title": "Make Channel",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.make.controller",
                 "title": "Make Controller",
                 "category": "Artisan"

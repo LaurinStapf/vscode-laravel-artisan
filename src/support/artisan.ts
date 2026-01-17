@@ -37,5 +37,4 @@ export const getPathFromOutput = (
     }
 
     return outputPath;
-
-}
+};

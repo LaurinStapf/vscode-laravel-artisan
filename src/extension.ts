@@ -9,24 +9,22 @@ import { generateNamespaceCommand } from "./commands/generateNamespace";
 import { registerArtisanMakeCommands } from "./artisan/registry";
 
 export async function activate(context: vscode.ExtensionContext) {
-  info("Activiating Laravel Artisan extension...");
+    info("Activiating Laravel Artisan extension...");
 
-  context.subscriptions.push(
-    vscode.commands.registerCommand(
-      commandName("artisan.namespace.generate"),
-      generateNamespaceCommand,
-    ),
-  );
+    context.subscriptions.push(
+        vscode.commands.registerCommand(
+            commandName("artisan.namespace.generate"),
+            generateNamespaceCommand,
+        ),
+    );
 
-  info("Started");
-  console.log("Laravel Artisan VS Code Started...");
+    info("Started");
+    console.log("Laravel Artisan VS Code Started...");
 
-  context.subscriptions.push(
-    ...registerArtisanMakeCommands(),
-  );
+    context.subscriptions.push(...registerArtisanMakeCommands());
 }
 
 export function deactivate() {
-  info("Stoped");
-  Server.stop();
+    info("Stoped");
+    Server.stop();
 }

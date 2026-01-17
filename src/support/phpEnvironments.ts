@@ -9,11 +9,7 @@ type PhpEnvironmentConfig = {
     relativePath?: boolean;
 };
 
-export type PhpEnvironment =
-    | "auto"
-    | "herd"
-    | "docker"
-    | "local";
+export type PhpEnvironment = "auto" | "herd" | "docker" | "local";
 
 export const phpEnvironments: Record<PhpEnvironment, PhpEnvironmentConfig> = {
     auto: {
@@ -40,7 +36,7 @@ export const phpEnvironments: Record<PhpEnvironment, PhpEnvironmentConfig> = {
         command: config<string>("phpCommand", ""),
         relativePath: true,
     },
-}
+};
 
 export const phpEnvironmentsThatUseRelativePaths: PhpEnvironment[] =
     Object.keys(phpEnvironments).filter(
