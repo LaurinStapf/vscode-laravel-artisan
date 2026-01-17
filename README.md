@@ -4,10 +4,8 @@ Run Laravel Artisan commands directly from within Visual Studio Code.
 
 This extension is focused on improving your Laravel developer experience by providing quick access to Artisan commands - without leaving your editor.
 
-> [!NOTE]
+> [!IMPORTANT]
 > This extension is forked from [**TheColorRed/vscode-laravel-artisan**](https://github.com/TheColorRed/vscode-laravel-artisan), with ongoing maintenance and improvements.
-
----
 
 ## Please Note
 
@@ -16,14 +14,10 @@ This extension is focused on improving your Laravel developer experience by prov
 - The extension is designed to complement other Laravel or PHP intelligence extensions (e.g. Offical Laravel extension, PHP Intelephense)
 - Docker and WSL environments are fully supported
 
----
-
 ## Supported Versions
 
 - Laravel: Any version that includes the `artisan` CLI
 - PHP: A CLI-capable PHP installation (Herd, Docker, WSL or local)
-
----
 
 ## Features
 
@@ -64,8 +58,6 @@ A non-exhaustive list of features provided by the extension:
 
 - Run Artisan commands inside Docker containers
 - Native support for WSL (newer and legacy versions)
-
----
 
 ## Usage
 
