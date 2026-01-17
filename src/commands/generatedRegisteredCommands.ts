@@ -5,4 +5,16 @@ export type RegisteredCommand =
     | "artisan.namespace.generate"
     | "artisan.make.cast"
     | "artisan.make.channel"
-    | "artisan.make.controller";
+    | "artisan.make.class"
+    | "artisan.make.command"
+    | "artisan.make.component"
+    | "artisan.make.config"
+    | "artisan.make.controller"
+    | "artisan.make.enum"
+    | "artisan.make.event"
+    | "artisan.make.exception"
+    | "artisan.make.factory"
+    | "artisan.make.interface"
+    | "artisan.make.job"
+    | "artisan.make.job-middleware"
+    | "artisan.make.listener";

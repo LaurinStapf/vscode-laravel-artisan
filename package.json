@@ -132,9 +132,74 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.make.class",
+                "title": "Make Class",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.command",
+                "title": "Make Command",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.component",
+                "title": "Make Component",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.config",
+                "title": "Make Config",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.make.controller",
                 "title": "Make Controller",
                 "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.enum",
+                "title": "Make Enum",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.event",
+                "title": "Make Event",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.exception",
+                "title": "Make Exception",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.factory",
+                "title": "Make Factory",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.interface",
+                "title": "Make Interface",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.job",
+                "title": "Make Job",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.job-middleware",
+                "title": "Make Job Middleware",
+                "category": "Laravel"
+            },
+            {
+                "command": "artisan.make.listener",
+                "title": "Make Event Listener",
+                "category": "Laravel"
+            },
+            {
+                "command": "artisan.make.livewire",
+                "title": "Make Livewire Component",
+                "category": "Laravel"
             }
         ]
     },
