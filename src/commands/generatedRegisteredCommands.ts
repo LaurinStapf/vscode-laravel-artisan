@@ -31,4 +31,6 @@ export type RegisteredCommand =
     | "artisan.make.resource"
     | "artisan.make.scope"
     | "artisan.make.seeder"
-    | "artisan.make.test";
+    | "artisan.make.test"
+    | "artisan.make.trait"
+    | "artisan.make.view";

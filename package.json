@@ -265,6 +265,16 @@
                 "command": "artisan.make.test",
                 "title": "Make Test",
                 "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.trait",
+                "title": "Make Trait",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.view",
+                "title": "Make View",
+                "category": "Artisan"
             }
         ]
     },

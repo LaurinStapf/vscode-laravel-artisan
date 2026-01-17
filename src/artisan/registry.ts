@@ -31,6 +31,8 @@ import { ResourceMakeCommand } from "./commands/ResourceMakeCommand";
 import { ScopeMakeCommand } from "./commands/ScopeMakeCommand";
 import { SeederMakeCommand } from "./commands/SeederMakeCommand";
 import { TestMakeCommand } from "./commands/TestMakeCommand";
+import { TraitMakeCommand } from "./commands/TraitMakeCommand";
+import { ViewMakeCommand } from "./commands/ViewMakeCommand";
 
 const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
@@ -62,6 +64,8 @@ const artisanMakeCommands = {
     "artisan.make.scope": ScopeMakeCommand,
     "artisan.make.seeder": SeederMakeCommand,
     "artisan.make.test": TestMakeCommand,
+    "artisan.make.trait": TraitMakeCommand,
+    "artisan.make.view": ViewMakeCommand,
 };
 
 export const registerArtisanMakeCommands = () => {
