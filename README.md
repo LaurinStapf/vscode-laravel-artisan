@@ -11,8 +11,9 @@ This extension is focused on improving your Laravel developer experience by prov
 
 - This extension executes `php artisan` commands in your workspace
 - It supports **multiple Laravel installations** within a single VS Code workspace
-- The extension is designed to complement other Laravel or PHP intelligence extensions (e.g. Offical Laravel extension, PHP Intelephense)
-- Docker and WSL environments are fully supported
+- The extension is designed to complement other Laravel or PHP intelligence extensions
+  (e.g. Offical Laravel extension, PHP Intelephense)
+- Docker and WSL environments are supported
 
 ## Supported Versions
 
