@@ -18,6 +18,19 @@ import { JobMakeCommand } from "./commands/JobMakeCommand";
 import { JobMiddlewareMakeCommand } from "./commands/JobMiddlewareMakeCommand";
 import { ListenerMakeCommand } from "./commands/ListenerMakeCommand";
 import { LivewireMakeCommand } from "./commands/LivewireMakeCommand";
+import { MailMakeCommand } from "./commands/MailMakeCommand";
+import { MiddlewareMakeCommand } from "./commands/MiddlewareMakeCommand";
+import { MigrationMakeCommand } from "./commands/MigrationMakeCommand";
+import { ModelMakeCommand } from "./commands/ModelMakeCommand";
+import { NotificationMakeCommand } from "./commands/NotificationMakeCommand";
+import { ObserverMakeCommand } from "./commands/ObserverMakeCommand";
+import { PolicyMakeCommand } from "./commands/PolicyMakeCommand";
+import { ProviderMakeCommand } from "./commands/ProviderMakeCommand";
+import { RequestMakeCommand } from "./commands/RequestMakeCommand";
+import { ResourceMakeCommand } from "./commands/ResourceMakeCommand";
+import { ScopeMakeCommand } from "./commands/ScopeMakeCommand";
+import { SeederMakeCommand } from "./commands/SeederMakeCommand";
+import { TestMakeCommand } from "./commands/TestMakeCommand";
 
 const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
@@ -36,6 +49,19 @@ const artisanMakeCommands = {
     "artisan.make.job-middleware": JobMiddlewareMakeCommand,
     "artisan.make.listener": ListenerMakeCommand,
     "artisan.make.livewire": LivewireMakeCommand,
+    "artisan.make.mail": MailMakeCommand,
+    "artisan.make.middleware": MiddlewareMakeCommand,
+    "artisan.make.migration": MigrationMakeCommand,
+    "artisan.make.model": ModelMakeCommand,
+    "artisan.make.notificaiton": NotificationMakeCommand,
+    "artisan.make.observer": ObserverMakeCommand,
+    "artisan.make.policy": PolicyMakeCommand,
+    "artisan.make.provider": ProviderMakeCommand,
+    "artisan.make.request": RequestMakeCommand,
+    "artisan.make.resource": ResourceMakeCommand,
+    "artisan.make.scope": ScopeMakeCommand,
+    "artisan.make.seeder": SeederMakeCommand,
+    "artisan.make.test": TestMakeCommand,
 };
 
 export const registerArtisanMakeCommands = () => {

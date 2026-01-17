@@ -189,17 +189,82 @@
             {
                 "command": "artisan.make.job-middleware",
                 "title": "Make Job Middleware",
-                "category": "Laravel"
+                "category": "Artisan"
             },
             {
                 "command": "artisan.make.listener",
                 "title": "Make Event Listener",
-                "category": "Laravel"
+                "category": "Artisan"
             },
             {
                 "command": "artisan.make.livewire",
                 "title": "Make Livewire Component",
-                "category": "Laravel"
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.mail",
+                "title": "Make Mail",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.midleware",
+                "title": "Make Middleware",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.migration",
+                "title": "Make Migration",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.model",
+                "title": "Make Model",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.notification",
+                "title": "Make Notification",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.observer",
+                "title": "Make Observer",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.policy",
+                "title": "Make Policy",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.provider",
+                "title": "Make Service Provider",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.request",
+                "title": "Make Request",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.resource",
+                "title": "Make Resource",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.scope",
+                "title": "Make Scope",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.seeder",
+                "title": "Make Seeder",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.make.test",
+                "title": "Make Test",
+                "category": "Artisan"
             }
         ]
     },
