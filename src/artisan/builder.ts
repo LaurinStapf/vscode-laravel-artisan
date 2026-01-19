@@ -233,11 +233,9 @@ export const buildArtisanCommand = async (
     uri: vscode.Uri,
     workspaceFolder: vscode.WorkspaceFolder,
 ): Promise<string | undefined> => {
-    const userArguments = await getUserArguments(
-        command.arguments,
-        workspaceFolder,
-        uri,
-    );
+    const userArguments = command.arguments?.length
+        ? await getUserArguments(command.arguments, workspaceFolder, uri)
+        : {};
 
     if (!userArguments) {
         return;
@@ -249,9 +247,11 @@ export const buildArtisanCommand = async (
         return;
     }
 
-    console.log(
-        `${command.name} ${getArgumentsAsString(userArguments)} ${getOptionsAsString(userOptions)}`,
-    );
-
-    return `${command.name} ${getArgumentsAsString(userArguments)} ${getOptionsAsString(userOptions)}`;
+    return [
+        command.name,
+        getArgumentsAsString(userArguments),
+        getOptionsAsString(userOptions),
+    ]
+        .filter(Boolean)
+        .join(" ");
 };

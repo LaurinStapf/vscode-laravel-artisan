@@ -1,6 +1,6 @@
 export interface Command {
     name: string;
-    arguments: Argument[];
+    arguments?: Argument[];
     options?: Option[];
 }
 
