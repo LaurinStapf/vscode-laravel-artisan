@@ -33,6 +33,15 @@
         "configuration": {
             "title": "Laravel Artisan",
             "properties": {
+                "Artisan.basePath": {
+                    "type": "string",
+                    "default": "",
+                    "markdownDescription": "_Relative_ base path for the Laravel project. This is used to resolve paths in the project. e.g. src, code/backend\n\n_Requires extension reload after changing._"
+                },
+                "Artisan.phpCommand": {
+                    "type": "string",
+                    "description": "Template for running PHP artisan commands. Use {code} as an optional placeholder for the command to run. e.g. `php \"{code}\"`.\n\nIf no {code} is present, code filepath will be appended to the command."
+                },
                 "Artisan.phpEnvironment": {
                     "type": "string",
                     "enum": [
@@ -54,39 +63,7 @@
                         "Docker"
                     ],
                     "default": "auto",
-                    "markdownDescription": "Local PHP environment. If you have a value for `#Laravel.phpCommand#` this setting will be ignored and that value will be used instead."
-                },
-                "Artisan.phpCommand": {
-                    "type": "string",
-                    "description": "Template for running PHP artisan commands. Use {code} as an optional placeholder for the command to run. e.g. `php \"{code}\"`.\n\nIf no {code} is present, code filepath will be appended to the command."
-                },
-                "Artisan.basePath": {
-                    "type": "string",
-                    "default": "",
-                    "markdownDescription": "_Relative_ base path for the Laravel project. This is used to resolve paths in the project. e.g. src, code/backend\n\n_Requires extension reload after changing._"
-                },
-                "Artisan.location": {
-                    "type": [
-                        "string",
-                        "array"
-                    ],
-                    "default": [],
-                    "description": "Additional Artisan locations"
-                },
-                "Artisan.wsl.enabled": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Whether or not to use WSL"
-                },
-                "Artisan.maxBuffer": {
-                    "type": "number",
-                    "default": 409600,
-                    "description": "Largest amount of data in bytes allowed on stdout or stderr"
-                },
-                "Artisan.php.location": {
-                    "type": "string",
-                    "default": "php",
-                    "description": "Sets a custom location to the php executable"
+                    "markdownDescription": "Local PHP environment. If you have a value for `#Artisan.phpCommand#` this setting will be ignored and that value will be used instead."
                 },
                 "Artisan.showErrorPopups": {
                     "type": "boolean",
@@ -102,16 +79,6 @@
                     "type": "string",
                     "default": "8000",
                     "description": "Sets the default port address for artisan serve"
-                },
-                "Artisan.docker.enabled": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Should commands get executed using docker?"
-                },
-                "Artisan.docker.command": {
-                    "type": "string",
-                    "default": null,
-                    "description": "Docker command to get container running"
                 }
             }
         },
