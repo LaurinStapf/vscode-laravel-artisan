@@ -52,7 +52,7 @@ export const showErrorPopup = (...errors: string[]) => {
 
     vscode.window
         .showErrorMessage(
-            "Error in Laravel Extension",
+            "Error in Laravel Artisan Extension",
             ...actions.map((action) => action.title),
         )
         .then((val: string | undefined) => {
