@@ -1,16 +1,12 @@
 import * as vscode from "vscode";
 
 export type ConfigKey =
-    | "php.location"
     | "basePath"
-    | "phpEnvironment"
     | "phpCommand"
+    | "phpEnvironment"
     | "showErrorPopups"
-    | "docker.enabled"
-    | "docker.command"
-    | "wsl.enabled"
-    | "maxBuffer"
-    | "location";
+    | "serve.defaultHost"
+    | "serve.defaultPort";
 
 export const config = <T>(key: ConfigKey, fallback: T): T =>
     vscode.workspace.getConfiguration("Artisan").get<T>(key, fallback);
