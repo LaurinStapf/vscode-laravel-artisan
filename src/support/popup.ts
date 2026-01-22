@@ -59,3 +59,19 @@ export const showErrorPopup = (...errors: string[]) => {
             actions.find((action) => action.title === val)?.command();
         });
 };
+
+export const showSuccessPopup = (stdout: string) => {
+    const trimmed = stdout.trim();
+
+    if (!trimmed) {
+        return;
+    }
+
+    const firstLine = trimmed
+        .split("\n")[0]
+        .replace(/^INFO\s+/i, "");
+
+    channel.appendLine(stdout);
+
+    vscode.window.showInformationMessage(firstLine);
+}

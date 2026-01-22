@@ -7,12 +7,13 @@ import { artisan } from "@src/support/php";
 import { getPathFromOutput } from "@src/support/artisan";
 import { openFileCommand } from ".";
 import { info } from "@src/support/logger";
+import { showSuccessPopup } from "@src/support/popup";
 
 export const runArtisanMakeCommand = async (
     command: Command,
     uri?: vscode.Uri | undefined,
 ) => {
-    const result = await runArtisanCommand(command, uri);
+    const result = await runCommand(command, uri);
 
     if (!result) {
         return;
@@ -31,6 +32,19 @@ export const runArtisanMakeCommand = async (
 };
 
 export const runArtisanCommand = async (
+    command: Command,
+    uri?: vscode.Uri,
+) => {
+    const result = await runCommand(command, uri);
+
+    if (!result) {
+        return;
+    }
+
+    showSuccessPopup(result.output);
+}
+
+export const runCommand = async (
     command: Command,
     uri?: vscode.Uri | undefined,
 ) => {
