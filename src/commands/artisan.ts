@@ -31,10 +31,7 @@ export const runArtisanMakeCommand = async (
     }
 };
 
-export const runArtisanCommand = async (
-    command: Command,
-    uri?: vscode.Uri,
-) => {
+export const runArtisanCommand = async (command: Command, uri?: vscode.Uri) => {
     const result = await runCommand(command, uri);
 
     if (!result) {
@@ -42,7 +39,7 @@ export const runArtisanCommand = async (
     }
 
     showSuccessPopup(result.output);
-}
+};
 
 export const runCommand = async (
     command: Command,

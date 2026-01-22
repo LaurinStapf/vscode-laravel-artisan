@@ -67,11 +67,9 @@ export const showSuccessPopup = (stdout: string) => {
         return;
     }
 
-    const firstLine = trimmed
-        .split("\n")[0]
-        .replace(/^INFO\s+/i, "");
+    const firstLine = trimmed.split("\n")[0].replace(/^INFO\s+/i, "");
 
     channel.appendLine(stdout);
 
     vscode.window.showInformationMessage(firstLine);
-}
+};
