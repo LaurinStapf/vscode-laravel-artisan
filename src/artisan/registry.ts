@@ -1,5 +1,8 @@
 import * as vscode from "vscode";
-import { runArtisanCommand, runArtisanMakeCommand } from "@src/commands/artisan";
+import {
+    runArtisanCommand,
+    runArtisanMakeCommand,
+} from "@src/commands/artisan";
 
 import { CacheClearCommand } from "./commands/CacheClearCommand";
 import { CastMakeCommand } from "./commands/CastMakeCommand";
@@ -36,7 +39,7 @@ import { ViewMakeCommand } from "./commands/ViewMakeCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
-}
+};
 
 const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
@@ -86,4 +89,4 @@ export const registerArtisanCommands = () => {
             runArtisanCommand(command, uri);
         });
     });
-}
+};
