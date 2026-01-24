@@ -2,6 +2,7 @@
 // Run 'php generate-registered-commands.php' to regenerate.
 
 export type RegisteredCommand =
+    | "artisan.cache.clear"
     | "artisan.namespace.generate"
     | "artisan.make.cast"
     | "artisan.make.channel"

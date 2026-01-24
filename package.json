@@ -84,6 +84,11 @@
         },
         "commands": [
             {
+                "command": "artisan.cache.clear",
+                "title": "Clear cache",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.namespace.generate",
                 "title": "Generate namespace",
                 "category": "Artisan"

@@ -1,16 +1,16 @@
 import * as vscode from "vscode";
-import { runArtisanMakeCommand } from "@src/commands/artisan";
+import { runArtisanCommand, runArtisanMakeCommand } from "@src/commands/artisan";
 
-import { ControllerMakeCommand } from "./commands/ControllerMakeCommand";
-import { info } from "console";
+import { CacheClearCommand } from "./commands/CacheClearCommand";
 import { CastMakeCommand } from "./commands/CastMakeCommand";
 import { ChannelMakeCommand } from "./commands/ChannelMakeCommand";
 import { ClassMakeCommand } from "./commands/ClassMakeCommand";
 import { CommandMakeCommand } from "./commands/CommandMakeCommand";
 import { ComponentMakeCommand } from "./commands/ComponentMakeCommand";
+import { ConfigMakeCommand } from "./commands/ConfigMakeCommand";
+import { ControllerMakeCommand } from "./commands/ControllerMakeCommand";
 import { EnumMakeCommand } from "./commands/EnumMakeCommand";
 import { EventMakeCommand } from "./commands/EventMakeCommand";
-import { ConfigMakeCommand } from "./commands/ConfigMakeCommand";
 import { ExceptionMakeCommand } from "./commands/ExceptionMakeCommand";
 import { FactoryMakeCommand } from "./commands/FactoryMakeCommand";
 import { InterfaceMakeCommand } from "./commands/InterfaceMakeCommand";
@@ -33,6 +33,10 @@ import { SeederMakeCommand } from "./commands/SeederMakeCommand";
 import { TestMakeCommand } from "./commands/TestMakeCommand";
 import { TraitMakeCommand } from "./commands/TraitMakeCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
+
+const artisanCommands = {
+    "artisan.cache.clear": CacheClearCommand,
+}
 
 const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
@@ -75,3 +79,11 @@ export const registerArtisanMakeCommands = () => {
         });
     });
 };
+
+export const registerArtisanCommands = () => {
+    return Object.entries(artisanCommands).map(([name, command]) => {
+        return vscode.commands.registerCommand(name, (uri: vscode.Uri) => {
+            runArtisanCommand(command, uri);
+        });
+    });
+}
