@@ -35,10 +35,14 @@ import { ScopeMakeCommand } from "./commands/ScopeMakeCommand";
 import { SeederMakeCommand } from "./commands/SeederMakeCommand";
 import { TestMakeCommand } from "./commands/TestMakeCommand";
 import { TraitMakeCommand } from "./commands/TraitMakeCommand";
+import { ViewCacheCommand } from "./commands/ViewCacheCommand";
+import { ViewClearCommand } from "./commands/ViewClearCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
+    "artisan.view.cache": ViewCacheCommand,
+    "artisan.view.clear": ViewClearCommand,
 };
 
 const artisanMakeCommands = {

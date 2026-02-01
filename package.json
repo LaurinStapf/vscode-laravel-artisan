@@ -247,6 +247,16 @@
                 "command": "artisan.make.view",
                 "title": "Make View",
                 "category": "Artisan"
+            },
+            {
+                "command": "artisan.view.cache",
+                "title": "Cache views",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.view.clear",
+                "title": "Clear views",
+                "category": "Artisan"
             }
         ]
     },
