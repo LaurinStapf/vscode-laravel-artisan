@@ -51,7 +51,11 @@ const getValueForArgumentType = async (
     }
 };
 
-const validateInput = (input: string, field: string, allowSpaces = false): boolean => {
+const validateInput = (
+    input: string,
+    field: string,
+    allowSpaces = false,
+): boolean => {
     if (input === "") {
         vscode.window.showWarningMessage(`${field} is required`);
 
@@ -87,7 +91,13 @@ const getUserArguments = async (
                 return;
             }
 
-            if (!validateInput(input, `Argument ${argument.name}`, argument.allowSpaces)) {
+            if (
+                !validateInput(
+                    input,
+                    `Argument ${argument.name}`,
+                    argument.allowSpaces,
+                )
+            ) {
                 input = undefined;
             }
         }
@@ -196,7 +206,13 @@ const getUserOptions = async (
                     break;
                 }
 
-                if (!validateInput(input, `Value for ${option.name}`, option.allowSpaces)) {
+                if (
+                    !validateInput(
+                        input,
+                        `Value for ${option.name}`,
+                        option.allowSpaces,
+                    )
+                ) {
                     input = undefined;
                 }
             }
