@@ -84,7 +84,6 @@ const getUserArguments = async (
                 return;
             }
 
-            console.log(validateInput(input, `Argument ${argument.name}`));
             if (!validateInput(input, `Argument ${argument.name}`)) {
                 input = undefined;
             }
