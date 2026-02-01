@@ -10,6 +10,7 @@ export interface Option {
     options?: () => Record<string, string>;
     default?: ((...args: string[]) => string) | string;
     description?: string;
+    allowSpaces?: boolean;
     excludeIf?: string[];
 }
 
@@ -19,6 +20,7 @@ export interface Argument {
     name: string;
     type?: ArgumentType | undefined;
     description?: string;
+    allowSpaces?: boolean;
 }
 
-export type ArgumentType = "namespaceOrPath" | "namespace" | "path";
+export type ArgumentType = "namespaceOrPath" | "namespace" | "path" | "input";

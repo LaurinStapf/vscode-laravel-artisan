@@ -43,19 +43,22 @@ const getValueForArgumentType = async (
             // OS path separators
             return path.normalize(value.replaceAll("\\", "/")).trim();
 
+        case "input":
+            return `"${value.replace(/"/g, '\\"').trim()}"`;
+
         default:
             return value.trim();
     }
 };
 
-const validateInput = (input: string, field: string): boolean => {
+const validateInput = (input: string, field: string, allowSpaces = false): boolean => {
     if (input === "") {
         vscode.window.showWarningMessage(`${field} is required`);
 
         return false;
     }
 
-    if (/\s/.test(input)) {
+    if (!allowSpaces && /\s/.test(input)) {
         vscode.window.showWarningMessage(`${field} cannot contain spaces`);
 
         return false;
@@ -84,7 +87,7 @@ const getUserArguments = async (
                 return;
             }
 
-            if (!validateInput(input, `Argument ${argument.name}`)) {
+            if (!validateInput(input, `Argument ${argument.name}`, argument.allowSpaces)) {
                 input = undefined;
             }
         }
@@ -193,7 +196,7 @@ const getUserOptions = async (
                     break;
                 }
 
-                if (!validateInput(input, `Value for ${option.name}`)) {
+                if (!validateInput(input, `Value for ${option.name}`, option.allowSpaces)) {
                     input = undefined;
                 }
             }
@@ -245,6 +248,8 @@ export const buildArtisanCommand = async (
     if (!userOptions) {
         return;
     }
+
+    console.log(userArguments);
 
     return [
         command.name,
