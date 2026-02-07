@@ -21,6 +21,7 @@ export interface Argument {
     type?: ArgumentType | undefined;
     description?: string;
     allowSpaces?: boolean;
+    isOptional?: boolean;
 }
 
 export type ArgumentType = "namespaceOrPath" | "namespace" | "path" | "input";

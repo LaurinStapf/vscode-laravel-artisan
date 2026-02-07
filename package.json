@@ -89,6 +89,16 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.docs",
+                "title": "Docs",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.key.generate",
+                "title": "Generate key",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.namespace.generate",
                 "title": "Generate namespace",
                 "category": "Artisan"

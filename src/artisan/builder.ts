@@ -5,6 +5,7 @@ import { Argument, ArgumentType, Command, Option } from "./types";
 import { getNamespace } from "@src/commands/generateNamespace";
 import { escapeNamespace } from "@src/support/util";
 
+const Continue = "Continue";
 const EndSelection = "End Selection";
 
 const getValueForArgumentType = async (
@@ -80,6 +81,35 @@ const getUserArguments = async (
 
     for (const argument of commandArguments) {
         let input = undefined;
+
+        if (argument.isOptional) {
+            const choice = await vscode.window.showQuickPick(
+                [
+                    {
+                        label: Continue,
+                        command: Continue,
+                        exlcude: EndSelection,
+                    },
+                    {
+                        label: EndSelection,
+                        command: EndSelection,
+                        exlcude: Continue,
+                    }
+                ],
+                {
+                    placeHolder: argument.description,
+                },
+            );
+
+            // Exit when the user press ESC
+            if (choice === undefined) {
+                return;
+            }
+
+            if (choice.command === EndSelection) {
+                break;
+            }
+        }
 
         while (!input) {
             input = await vscode.window.showInputBox({

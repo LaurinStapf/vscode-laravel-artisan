@@ -3,6 +3,8 @@
 
 export type RegisteredCommand =
     | "artisan.cache.clear"
+    | "artisan.docs"
+    | "artisan.key.generate"
     | "artisan.namespace.generate"
     | "artisan.make.cast"
     | "artisan.make.channel"

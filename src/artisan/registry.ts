@@ -38,9 +38,13 @@ import { TraitMakeCommand } from "./commands/TraitMakeCommand";
 import { ViewCacheCommand } from "./commands/ViewCacheCommand";
 import { ViewClearCommand } from "./commands/ViewClearCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
+import { KeyGenerateCommand } from "./commands/KeyGenerateCommand";
+import { DocsCommand } from "./commands/DocsCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
+    "artisan.docs": DocsCommand,
+    "artisan.key.generate": KeyGenerateCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,
 };
