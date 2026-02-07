@@ -94,7 +94,7 @@ const getUserArguments = async (
                         label: EndSelection,
                         command: EndSelection,
                         exlcude: Continue,
-                    }
+                    },
                 ],
                 {
                     placeHolder: argument.description,
