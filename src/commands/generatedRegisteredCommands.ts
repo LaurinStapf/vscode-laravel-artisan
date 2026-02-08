@@ -4,6 +4,7 @@
 export type RegisteredCommand =
     | "artisan.cache.clear"
     | "artisan.docs"
+    | "artisan.down"
     | "artisan.key.generate"
     | "artisan.namespace.generate"
     | "artisan.make.cast"
@@ -37,5 +38,6 @@ export type RegisteredCommand =
     | "artisan.make.test"
     | "artisan.make.trait"
     | "artisan.make.view"
+    | "artisan.up"
     | "artisan.view.cache"
     | "artisan.view.clear";

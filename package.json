@@ -94,6 +94,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.down",
+                "title": "Down",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.key.generate",
                 "title": "Generate key",
                 "category": "Artisan"
@@ -256,6 +261,11 @@
             {
                 "command": "artisan.make.view",
                 "title": "Make View",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.up",
+                "title": "Up",
                 "category": "Artisan"
             },
             {
