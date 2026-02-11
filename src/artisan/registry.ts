@@ -42,12 +42,14 @@ import { KeyGenerateCommand } from "./commands/KeyGenerateCommand";
 import { DocsCommand } from "./commands/DocsCommand";
 import { DownCommand } from "./commands/DownCommand";
 import { UpCommand } from "./commands/UpCommand";
+import { OptimizeCommand } from "./commands/OptimizeCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
     "artisan.key.generate": KeyGenerateCommand,
+    "artisan.optimize": OptimizeCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,
     "artisan.up": UpCommand,

@@ -264,6 +264,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.optimize",
+                "title": "Optimize",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.up",
                 "title": "Up",
                 "category": "Artisan"

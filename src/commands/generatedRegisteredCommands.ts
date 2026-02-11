@@ -38,6 +38,7 @@ export type RegisteredCommand =
     | "artisan.make.test"
     | "artisan.make.trait"
     | "artisan.make.view"
+    | "artisan.optimize"
     | "artisan.up"
     | "artisan.view.cache"
     | "artisan.view.clear";
