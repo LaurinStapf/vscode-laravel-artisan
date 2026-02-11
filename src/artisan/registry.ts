@@ -44,9 +44,11 @@ import { DownCommand } from "./commands/DownCommand";
 import { UpCommand } from "./commands/UpCommand";
 import { OptimizeCommand } from "./commands/OptimizeCommand";
 import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
+import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
+    "artisan.config.cache": ConfigCacheCommand,
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
     "artisan.key.generate": KeyGenerateCommand,

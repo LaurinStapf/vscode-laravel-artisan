@@ -3,6 +3,7 @@
 
 export type RegisteredCommand =
     | "artisan.cache.clear"
+    | "artisan.config.cache"
     | "artisan.docs"
     | "artisan.down"
     | "artisan.key.generate"

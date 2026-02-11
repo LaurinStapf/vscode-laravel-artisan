@@ -89,6 +89,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.config.cache",
+                "title": "Cache config",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.docs",
                 "title": "Docs",
                 "category": "Artisan"
