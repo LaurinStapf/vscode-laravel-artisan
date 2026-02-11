@@ -4,6 +4,7 @@
 export type RegisteredCommand =
     | "artisan.cache.clear"
     | "artisan.config.cache"
+    | "artisan.config.clear"
     | "artisan.docs"
     | "artisan.down"
     | "artisan.key.generate"

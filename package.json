@@ -94,6 +94,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.config.clear",
+                "title": "Clear config cache",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.docs",
                 "title": "Docs",
                 "category": "Artisan"
