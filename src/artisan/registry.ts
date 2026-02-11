@@ -43,16 +43,18 @@ import { DocsCommand } from "./commands/DocsCommand";
 import { DownCommand } from "./commands/DownCommand";
 import { UpCommand } from "./commands/UpCommand";
 import { OptimizeCommand } from "./commands/OptimizeCommand";
+import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
     "artisan.key.generate": KeyGenerateCommand,
+    "artisan.migrate.install": MigrateInstallCommand,
     "artisan.optimize": OptimizeCommand,
+    "artisan.up": UpCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,
-    "artisan.up": UpCommand,
 };
 
 const artisanMakeCommands = {

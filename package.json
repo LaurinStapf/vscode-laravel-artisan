@@ -264,6 +264,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.migrate.install",
+                "title": "Install migration table",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.optimize",
                 "title": "Optimize",
                 "category": "Artisan"
