@@ -54,14 +54,6 @@ const artisanCommands = {
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
     "artisan.key.generate": KeyGenerateCommand,
-    "artisan.migrate.install": MigrateInstallCommand,
-    "artisan.optimize": OptimizeCommand,
-    "artisan.up": UpCommand,
-    "artisan.view.cache": ViewCacheCommand,
-    "artisan.view.clear": ViewClearCommand,
-};
-
-const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
     "artisan.make.channel": ChannelMakeCommand,
     "artisan.make.class": ClassMakeCommand,
@@ -74,8 +66,8 @@ const artisanMakeCommands = {
     "artisan.make.exception": ExceptionMakeCommand,
     "artisan.make.factory": FactoryMakeCommand,
     "artisan.make.interface": InterfaceMakeCommand,
-    "artisan.make.job": JobMakeCommand,
     "artisan.make.job-middleware": JobMiddlewareMakeCommand,
+    "artisan.make.job": JobMakeCommand,
     "artisan.make.listener": ListenerMakeCommand,
     "artisan.make.livewire": LivewireMakeCommand,
     "artisan.make.mail": MailMakeCommand,
@@ -93,14 +85,11 @@ const artisanMakeCommands = {
     "artisan.make.test": TestMakeCommand,
     "artisan.make.trait": TraitMakeCommand,
     "artisan.make.view": ViewMakeCommand,
-};
-
-export const registerArtisanMakeCommands = () => {
-    return Object.entries(artisanMakeCommands).map(([name, command]) => {
-        return vscode.commands.registerCommand(name, (uri: vscode.Uri) => {
-            runArtisanMakeCommand(command, uri);
-        });
-    });
+    "artisan.migrate.install": MigrateInstallCommand,
+    "artisan.optimize": OptimizeCommand,
+    "artisan.up": UpCommand,
+    "artisan.view.cache": ViewCacheCommand,
+    "artisan.view.clear": ViewClearCommand,
 };
 
 export const registerArtisanCommands = () => {

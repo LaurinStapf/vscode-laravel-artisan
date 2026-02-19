@@ -38,7 +38,26 @@ export const runArtisanCommand = async (command: Command, uri?: vscode.Uri) => {
         return;
     }
 
-    showSuccessPopup(result.output);
+    switch (command.type) {
+        case "make":
+            const outputPath = getPathFromOutput(
+                result.output,
+                command.name,
+                result.workspaceFolder,
+                result.uri,
+            );
+
+            if (outputPath) {
+                openFileCommand(vscode.Uri.file(outputPath), 1, 1);
+            }
+
+            break;
+
+        case "run":
+        default:
+            showSuccessPopup(result.output);
+            break;
+    }
 };
 
 export const runCommand = async (

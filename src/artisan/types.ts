@@ -1,8 +1,11 @@
 export interface Command {
     name: string;
+    type?: CommandType | undefined;
     arguments?: Argument[];
     options?: Option[];
 }
+
+export type CommandType = "make" | "run";
 
 export interface Option {
     name: string;
