@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
 import {
     runArtisanCommand,
-    runArtisanMakeCommand,
 } from "@src/commands/artisan";
 
 import { CacheClearCommand } from "./commands/CacheClearCommand";

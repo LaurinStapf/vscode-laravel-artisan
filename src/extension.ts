@@ -7,7 +7,6 @@ import { info } from "./support/logger";
 import { commandName } from "./commands";
 import { generateNamespaceCommand } from "./commands/generateNamespace";
 import {
-    registerArtisanMakeCommands,
     registerArtisanCommands,
 } from "./artisan/registry";
 
@@ -25,7 +24,6 @@ export async function activate(context: vscode.ExtensionContext) {
     console.log("Laravel Artisan VS Code Started...");
 
     context.subscriptions.push(
-        ...registerArtisanMakeCommands(),
         ...registerArtisanCommands(),
     );
 }
