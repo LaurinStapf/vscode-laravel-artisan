@@ -44,6 +44,7 @@ import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
 import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
 import { ConfigClearCommand } from "./commands/ConfigClearCommand";
 import { RouteCacheCommand } from "./commands/RouteCacheCommand";
+import { RouteClearCommand } from "./commands/RouteClearCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
@@ -86,6 +87,7 @@ const artisanCommands = {
     "artisan.migrate.install": MigrateInstallCommand,
     "artisan.optimize": OptimizeCommand,
     "artisan.route.cache": RouteCacheCommand,
+    "artisan.route.clear": RouteClearCommand,
     "artisan.up": UpCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,

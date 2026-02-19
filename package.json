@@ -289,6 +289,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.route.clear",
+                "title": "Clear route cache",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.up",
                 "title": "Up",
                 "category": "Artisan"

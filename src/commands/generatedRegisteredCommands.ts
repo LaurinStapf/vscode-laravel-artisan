@@ -43,6 +43,7 @@ export type RegisteredCommand =
     | "artisan.migrate.install"
     | "artisan.optimize"
     | "artisan.route.cache"
+    | "artisan.route.clear"
     | "artisan.up"
     | "artisan.view.cache"
     | "artisan.view.clear";
