@@ -42,6 +42,7 @@ export type RegisteredCommand =
     | "artisan.make.view"
     | "artisan.migrate.install"
     | "artisan.optimize"
+    | "artisan.route.cache"
     | "artisan.up"
     | "artisan.view.cache"
     | "artisan.view.clear";

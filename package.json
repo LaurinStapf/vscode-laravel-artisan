@@ -284,6 +284,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.route.cache",
+                "title": "Cache routes",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.up",
                 "title": "Up",
                 "category": "Artisan"

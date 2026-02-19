@@ -43,6 +43,7 @@ import { OptimizeCommand } from "./commands/OptimizeCommand";
 import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
 import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
 import { ConfigClearCommand } from "./commands/ConfigClearCommand";
+import { RouteCacheCommand } from "./commands/RouteCacheCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
@@ -84,6 +85,7 @@ const artisanCommands = {
     "artisan.make.view": ViewMakeCommand,
     "artisan.migrate.install": MigrateInstallCommand,
     "artisan.optimize": OptimizeCommand,
+    "artisan.route.cache": RouteCacheCommand,
     "artisan.up": UpCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,
