@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import {
-    runArtisanCommand,
-} from "@src/commands/artisan";
+import { runArtisanCommand } from "@src/commands/artisan";
 
 import { CacheClearCommand } from "./commands/CacheClearCommand";
 import { CastMakeCommand } from "./commands/CastMakeCommand";

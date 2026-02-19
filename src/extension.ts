@@ -6,9 +6,7 @@ import Server from "./commands/base/Serve";
 import { info } from "./support/logger";
 import { commandName } from "./commands";
 import { generateNamespaceCommand } from "./commands/generateNamespace";
-import {
-    registerArtisanCommands,
-} from "./artisan/registry";
+import { registerArtisanCommands } from "./artisan/registry";
 
 export async function activate(context: vscode.ExtensionContext) {
     info("Activiating Laravel Artisan extension...");
@@ -23,9 +21,7 @@ export async function activate(context: vscode.ExtensionContext) {
     info("Started");
     console.log("Laravel Artisan VS Code Started...");
 
-    context.subscriptions.push(
-        ...registerArtisanCommands(),
-    );
+    context.subscriptions.push(...registerArtisanCommands());
 }
 
 export function deactivate() {
