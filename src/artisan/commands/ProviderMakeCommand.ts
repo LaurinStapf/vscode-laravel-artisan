@@ -3,6 +3,7 @@ import { forceOption } from "@src/artisan/options";
 
 export const ProviderMakeCommand: Command = {
     name: "make:provider",
+    type: "make",
     arguments: [
         {
             name: "name",

@@ -3,6 +3,7 @@ import { forceOption, testOptions } from "../options";
 
 export const ControllerMakeCommand: Command = {
     name: "make:controller",
+    type: "make",
     arguments: [
         {
             name: "name",

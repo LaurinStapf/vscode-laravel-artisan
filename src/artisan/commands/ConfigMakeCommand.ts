@@ -3,6 +3,7 @@ import { forceOption } from "../options";
 
 export const ConfigMakeCommand: Command = {
     name: "make:config",
+    type: "make",
     arguments: [
         {
             name: "name",

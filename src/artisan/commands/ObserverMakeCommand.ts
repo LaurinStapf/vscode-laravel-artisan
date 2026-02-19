@@ -2,6 +2,7 @@ import { Command } from "../types";
 
 export const ObserverMakeCommand: Command = {
     name: "make:observer",
+    type: "make",
     arguments: [
         {
             name: "name",

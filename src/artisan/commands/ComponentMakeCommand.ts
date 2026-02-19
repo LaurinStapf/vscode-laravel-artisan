@@ -3,6 +3,7 @@ import { forceOption, testOptions } from "../options";
 
 export const ComponentMakeCommand: Command = {
     name: "make:component",
+    type: "make",
     arguments: [
         {
             name: "name",

@@ -2,6 +2,7 @@ import { Command } from "../types";
 
 export const ResourceMakeCommand: Command = {
     name: "make:resource",
+    type: "make",
     arguments: [
         {
             name: "name",

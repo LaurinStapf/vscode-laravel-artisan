@@ -3,6 +3,7 @@ import { forceOption, testOptions } from "@src/artisan/options";
 
 export const ModelMakeCommand: Command = {
     name: "make:model",
+    type: "make",
     arguments: [
         {
             name: "name",

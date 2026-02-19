@@ -3,6 +3,7 @@ import { forceOption } from "@src/artisan/options";
 
 export const ScopeMakeCommand: Command = {
     name: "make:scope",
+    type: "make",
     arguments: [
         {
             name: "name",

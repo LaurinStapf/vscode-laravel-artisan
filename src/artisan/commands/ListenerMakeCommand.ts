@@ -3,6 +3,7 @@ import { forceOption, testOptions } from "@src/artisan/options";
 
 export const ListenerMakeCommand: Command = {
     name: "make:listener",
+    type: "make",
     arguments: [
         {
             name: "name",

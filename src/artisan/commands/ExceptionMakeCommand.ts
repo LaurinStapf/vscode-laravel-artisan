@@ -2,6 +2,7 @@ import { Command } from "../types";
 
 export const ExceptionMakeCommand: Command = {
     name: "make:exception",
+    type: "make",
     arguments: [
         {
             name: "name",

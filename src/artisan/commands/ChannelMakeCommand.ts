@@ -3,6 +3,7 @@ import { forceOption } from "../options";
 
 export const ChannelMakeCommand: Command = {
     name: "make:channel",
+    type: "make",
     arguments: [
         {
             name: "name",

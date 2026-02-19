@@ -2,6 +2,7 @@ import { Command } from "../types";
 
 export const MigrationMakeCommand: Command = {
     name: "make:migration",
+    type: "make",
     arguments: [
         {
             name: "name",

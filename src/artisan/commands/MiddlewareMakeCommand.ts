@@ -3,6 +3,7 @@ import { forceOption } from "@src/artisan/options";
 
 export const MiddlewareMakeCommand: Command = {
     name: "make:middleware",
+    type: "make",
     arguments: [
         {
             name: "name",

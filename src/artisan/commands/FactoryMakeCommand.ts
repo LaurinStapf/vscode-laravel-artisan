@@ -2,6 +2,7 @@ import { Command } from "../types";
 
 export const FactoryMakeCommand: Command = {
     name: "make:factory",
+    type: "make",
     arguments: [
         {
             name: "name",
