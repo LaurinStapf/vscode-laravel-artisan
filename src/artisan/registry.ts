@@ -6,52 +6,56 @@ import { CastMakeCommand } from "./commands/CastMakeCommand";
 import { ChannelMakeCommand } from "./commands/ChannelMakeCommand";
 import { ClassMakeCommand } from "./commands/ClassMakeCommand";
 import { CommandMakeCommand } from "./commands/CommandMakeCommand";
+import { CompiledClearCommand } from "./commands/CompiledClearCommand";
 import { ComponentMakeCommand } from "./commands/ComponentMakeCommand";
+import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
+import { ConfigClearCommand } from "./commands/ConfigClearCommand";
 import { ConfigMakeCommand } from "./commands/ConfigMakeCommand";
 import { ControllerMakeCommand } from "./commands/ControllerMakeCommand";
+import { DocsCommand } from "./commands/DocsCommand";
+import { DownCommand } from "./commands/DownCommand";
 import { EnumMakeCommand } from "./commands/EnumMakeCommand";
+import { EventGenerateCommand } from "./commands/EventGenerateCommand";
 import { EventMakeCommand } from "./commands/EventMakeCommand";
 import { ExceptionMakeCommand } from "./commands/ExceptionMakeCommand";
 import { FactoryMakeCommand } from "./commands/FactoryMakeCommand";
 import { InterfaceMakeCommand } from "./commands/InterfaceMakeCommand";
 import { JobMakeCommand } from "./commands/JobMakeCommand";
 import { JobMiddlewareMakeCommand } from "./commands/JobMiddlewareMakeCommand";
+import { KeyGenerateCommand } from "./commands/KeyGenerateCommand";
 import { ListenerMakeCommand } from "./commands/ListenerMakeCommand";
 import { LivewireMakeCommand } from "./commands/LivewireMakeCommand";
 import { MailMakeCommand } from "./commands/MailMakeCommand";
 import { MiddlewareMakeCommand } from "./commands/MiddlewareMakeCommand";
+import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
 import { MigrationMakeCommand } from "./commands/MigrationMakeCommand";
 import { ModelMakeCommand } from "./commands/ModelMakeCommand";
 import { NotificationMakeCommand } from "./commands/NotificationMakeCommand";
 import { ObserverMakeCommand } from "./commands/ObserverMakeCommand";
+import { OptimizeCommand } from "./commands/OptimizeCommand";
 import { PolicyMakeCommand } from "./commands/PolicyMakeCommand";
 import { ProviderMakeCommand } from "./commands/ProviderMakeCommand";
 import { RequestMakeCommand } from "./commands/RequestMakeCommand";
 import { ResourceMakeCommand } from "./commands/ResourceMakeCommand";
+import { RouteCacheCommand } from "./commands/RouteCacheCommand";
+import { RouteClearCommand } from "./commands/RouteClearCommand";
 import { ScopeMakeCommand } from "./commands/ScopeMakeCommand";
 import { SeederMakeCommand } from "./commands/SeederMakeCommand";
 import { TestMakeCommand } from "./commands/TestMakeCommand";
 import { TraitMakeCommand } from "./commands/TraitMakeCommand";
+import { UpCommand } from "./commands/UpCommand";
 import { ViewCacheCommand } from "./commands/ViewCacheCommand";
 import { ViewClearCommand } from "./commands/ViewClearCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
-import { KeyGenerateCommand } from "./commands/KeyGenerateCommand";
-import { DocsCommand } from "./commands/DocsCommand";
-import { DownCommand } from "./commands/DownCommand";
-import { UpCommand } from "./commands/UpCommand";
-import { OptimizeCommand } from "./commands/OptimizeCommand";
-import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
-import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
-import { ConfigClearCommand } from "./commands/ConfigClearCommand";
-import { RouteCacheCommand } from "./commands/RouteCacheCommand";
-import { RouteClearCommand } from "./commands/RouteClearCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
+    "artisan.compiled.clear": CompiledClearCommand,
     "artisan.config.cache": ConfigCacheCommand,
     "artisan.config.clear": ConfigClearCommand,
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
+    "artisan.event.generate": EventGenerateCommand,
     "artisan.key.generate": KeyGenerateCommand,
     "artisan.make.cast": CastMakeCommand,
     "artisan.make.channel": ChannelMakeCommand,

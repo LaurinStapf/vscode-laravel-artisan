@@ -89,6 +89,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.compiled.clear",
+                "title": "Clear compiled classes",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.config.cache",
                 "title": "Cache config",
                 "category": "Artisan"
@@ -106,6 +111,11 @@
             {
                 "command": "artisan.down",
                 "title": "Down",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.event.generate",
+                "title": "Generate events and listeners",
                 "category": "Artisan"
             },
             {
