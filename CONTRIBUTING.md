@@ -17,4 +17,4 @@ npm install
 ## Of Note
 
 -   `console.log` will appear in your main VS Code "Debug Console" tab, _not_ the Extension Development Host window
--   `info`, `error`, etc from `src/utils/output.ts` will show up in the "Output" tab (make sure to select "Laravel Artisan" from the list) of your Extension Development Host window
+-   `info`, `error`, etc from `src/support/logger.ts` will show up in the "Output" tab (make sure to select "Laravel Artisan" from the list) of your Extension Development Host window
