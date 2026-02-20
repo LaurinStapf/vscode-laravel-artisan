@@ -1,6 +1,6 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const MigrateInstallCommand: Command = {
+export const MigrateInstallCommand: RunCommand = {
     name: "migrate:install",
     options: [
         {

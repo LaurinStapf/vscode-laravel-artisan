@@ -1,5 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const ConfigCacheCommand: Command = {
+export const ConfigCacheCommand: RunCommand = {
     name: "config:cache",
 };

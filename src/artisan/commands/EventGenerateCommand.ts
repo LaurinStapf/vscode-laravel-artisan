@@ -1,5 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const EventGenerateCommand: Command = {
+export const EventGenerateCommand: RunCommand = {
     name: "event:generate",
 };

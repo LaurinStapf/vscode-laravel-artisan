@@ -1,8 +1,7 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 
-export const PolicyMakeCommand: Command = {
+export const PolicyMakeCommand: MakeCommand = {
     name: "make:policy",
-    type: "make",
     arguments: [
         {
             name: "name",

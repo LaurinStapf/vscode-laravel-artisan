@@ -1,6 +1,6 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const KeyGenerateCommand: Command = {
+export const KeyGenerateCommand: RunCommand = {
     name: "key:generate",
     options: [
         {

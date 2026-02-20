@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption } from "@src/artisan/options";
 
-export const InterfaceMakeCommand: Command = {
+export const InterfaceMakeCommand: MakeCommand = {
     name: "make:interface",
-    type: "make",
     arguments: [
         {
             name: "name",

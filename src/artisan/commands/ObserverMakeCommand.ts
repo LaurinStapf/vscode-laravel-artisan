@@ -1,8 +1,7 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 
-export const ObserverMakeCommand: Command = {
+export const ObserverMakeCommand: MakeCommand = {
     name: "make:observer",
-    type: "make",
     arguments: [
         {
             name: "name",

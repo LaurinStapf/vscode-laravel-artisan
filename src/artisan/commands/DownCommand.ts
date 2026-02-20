@@ -1,6 +1,6 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const DownCommand: Command = {
+export const DownCommand: RunCommand = {
     name: "down",
     options: [
         {

@@ -1,6 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const RouteCacheCommand: Command = {
+export const RouteCacheCommand: RunCommand = {
     name: "route:cache",
-    type: "run",
 };

@@ -1,5 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const CompiledClearCommand: Command = {
+export const CompiledClearCommand: RunCommand = {
     name: "clear-compiled",
 };

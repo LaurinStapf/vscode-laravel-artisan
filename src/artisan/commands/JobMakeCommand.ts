@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption, testOptions } from "@src/artisan/options";
 
-export const JobMakeCommand: Command = {
+export const JobMakeCommand: MakeCommand = {
     name: "make:job",
-    type: "make",
     arguments: [
         {
             name: "name",

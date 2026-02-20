@@ -1,6 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const RouteClearCommand: Command = {
+export const RouteClearCommand: RunCommand = {
     name: "route:clear",
-    type: "run",
 };

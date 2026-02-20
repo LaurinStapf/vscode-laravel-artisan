@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption, testOptions } from "@src/artisan/options";
 
-export const ListenerMakeCommand: Command = {
+export const ListenerMakeCommand: MakeCommand = {
     name: "make:listener",
-    type: "make",
     arguments: [
         {
             name: "name",

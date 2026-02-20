@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption, testOptions } from "@src/artisan/options";
 
-export const LivewireMakeCommand: Command = {
+export const LivewireMakeCommand: MakeCommand = {
     name: "make:livewire",
-    type: "make",
     arguments: [
         {
             name: "name",

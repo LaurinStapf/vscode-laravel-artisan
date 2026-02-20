@@ -1,5 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const UpCommand: Command = {
+export const UpCommand: RunCommand = {
     name: "up",
 };

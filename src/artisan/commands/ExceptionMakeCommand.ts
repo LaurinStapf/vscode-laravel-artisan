@@ -1,8 +1,7 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 
-export const ExceptionMakeCommand: Command = {
+export const ExceptionMakeCommand: MakeCommand = {
     name: "make:exception",
-    type: "make",
     arguments: [
         {
             name: "name",

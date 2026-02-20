@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption, testOptions } from "../options";
 
-export const ControllerMakeCommand: Command = {
+export const ControllerMakeCommand: MakeCommand = {
     name: "make:controller",
-    type: "make",
     arguments: [
         {
             name: "name",

@@ -1,6 +1,6 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const DocsCommand: Command = {
+export const DocsCommand: RunCommand = {
     name: "docs",
     arguments: [
         {

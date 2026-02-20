@@ -1,6 +1,6 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const OptimizeCommand: Command = {
+export const OptimizeCommand: RunCommand = {
     name: "optimize",
     options: [
         {

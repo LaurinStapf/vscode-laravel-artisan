@@ -1,5 +1,5 @@
-import { Command } from "../types";
+import { Command, RunCommand } from "../types";
 
-export const ConfigClearCommand: Command = {
+export const ConfigClearCommand: RunCommand = {
     name: "config:clear",
 };

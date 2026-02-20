@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption } from "@src/artisan/options";
 
-export const TraitMakeCommand: Command = {
+export const TraitMakeCommand: MakeCommand = {
     name: "make:trait",
-    type: "make",
     arguments: [
         {
             name: "name",

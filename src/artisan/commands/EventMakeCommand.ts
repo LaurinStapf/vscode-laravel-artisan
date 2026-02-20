@@ -1,9 +1,8 @@
-import { Command } from "../types";
+import { Command, MakeCommand } from "../types";
 import { forceOption } from "@src/artisan/options";
 
-export const EventMakeCommand: Command = {
+export const EventMakeCommand: MakeCommand = {
     name: "make:event",
-    type: "make",
     arguments: [
         {
             name: "name",
