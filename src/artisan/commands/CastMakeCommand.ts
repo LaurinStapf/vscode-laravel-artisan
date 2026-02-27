@@ -2,6 +2,7 @@ import { MakeCommand } from "../types";
 
 export const CastMakeCommand: MakeCommand = {
     name: "make:cast",
+    type: "make",
     arguments: [
         {
             name: "name",

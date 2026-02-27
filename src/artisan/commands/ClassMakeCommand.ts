@@ -2,6 +2,7 @@ import { MakeCommand } from "../types";
 
 export const ClassMakeCommand: MakeCommand = {
     name: "make:class",
+    type: "make",
     arguments: [
         {
             name: "name",

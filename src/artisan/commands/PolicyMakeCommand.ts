@@ -2,6 +2,7 @@ import { Command, MakeCommand } from "../types";
 
 export const PolicyMakeCommand: MakeCommand = {
     name: "make:policy",
+    type: "make",
     arguments: [
         {
             name: "name",

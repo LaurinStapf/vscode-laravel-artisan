@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { config } from "./config";
 import { debugInfo } from "./debug";
-import { channel, error } from "./logger";
+import { channel, error, info } from "./logger";
 
 let showErrorPopups = config<boolean>("showErrorPopups", false);
 let lastErrorMessageShownAt = 0;
@@ -61,6 +61,8 @@ export const showErrorPopup = (...errors: string[]) => {
 };
 
 export const showSuccessPopup = (stdout: string) => {
+    info(stdout);
+
     const trimmed = stdout.trim();
 
     if (!trimmed) {
@@ -68,8 +70,6 @@ export const showSuccessPopup = (stdout: string) => {
     }
 
     const firstLine = trimmed.split("\n")[0].replace(/^INFO\s+/i, "");
-
-    channel.appendLine(stdout);
 
     vscode.window.showInformationMessage(firstLine);
 };

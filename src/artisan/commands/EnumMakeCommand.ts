@@ -2,6 +2,7 @@ import { Command, MakeCommand } from "../types";
 
 export const EnumMakeCommand: MakeCommand = {
     name: "make:enum",
+    type: "make",
     arguments: [
         {
             name: "name",

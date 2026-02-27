@@ -3,6 +3,7 @@ import { forceOption } from "@src/artisan/options";
 
 export const TraitMakeCommand: MakeCommand = {
     name: "make:trait",
+    type: "make",
     arguments: [
         {
             name: "name",

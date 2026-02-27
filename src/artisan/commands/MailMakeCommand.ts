@@ -4,6 +4,7 @@ import { forceOption, testOptions } from "@src/artisan/options";
 
 export const MailMakeCommand: MakeCommand = {
     name: "make:mail",
+    type: "make",
     arguments: [
         {
             name: "name",

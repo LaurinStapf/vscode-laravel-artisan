@@ -2,6 +2,7 @@ import { Command, RunCommand } from "../types";
 
 export const CacheClearCommand: RunCommand = {
     name: "cache:clear",
+    type: "run",
     options: [
         {
             name: "--tags",

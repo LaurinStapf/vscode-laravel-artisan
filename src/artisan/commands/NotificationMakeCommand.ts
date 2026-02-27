@@ -3,6 +3,7 @@ import { forceOption, testOptions } from "@src/artisan/options";
 
 export const NotificationMakeCommand: MakeCommand = {
     name: "make:notification",
+    type: "make",
     arguments: [
         {
             name: "name",
