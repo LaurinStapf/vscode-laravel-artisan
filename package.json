@@ -2,7 +2,7 @@
     "name": "vscode-laravel-artisan-commands",
     "publisher": "laurinstapf",
     "displayName": "Laravel Artisan Runner",
-    "description": "Run Laravel Artisan commands within Visual Studio Code",
+    "description": "VS Code extension for Laravel Artisan",
     "version": "1.2.0",
     "engines": {
         "vscode": "^1.89.0"
@@ -13,7 +13,7 @@
         "php",
         "herd"
     ],
-    "icon": "images/icon.png",
+    "icon": "art/icon.png",
     "homepage": "https://github.com/laurinstapf/vscode-laravel-artisan",
     "repository": {
         "type": "git",
