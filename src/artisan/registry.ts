@@ -27,7 +27,12 @@ import { ListenerMakeCommand } from "./commands/ListenerMakeCommand";
 import { LivewireMakeCommand } from "./commands/LivewireMakeCommand";
 import { MailMakeCommand } from "./commands/MailMakeCommand";
 import { MiddlewareMakeCommand } from "./commands/MiddlewareMakeCommand";
+import { MigrateCommand } from "./commands/MigrateCommand";
+import { MigrateFreshCommand } from "./commands/MigrateFreshCommand";
 import { MigrateInstallCommand } from "./commands/MigrateInstallCommand";
+import { MigrateRefreshCommand } from "./commands/MigrateRefreshCommand";
+import { MigrateResetCommand } from "./commands/MigrateResetCommand";
+import { MigrateRollbackCommand } from "./commands/MigrateRollbackCommand";
 import { MigrationMakeCommand } from "./commands/MigrationMakeCommand";
 import { ModelMakeCommand } from "./commands/ModelMakeCommand";
 import { NotificationMakeCommand } from "./commands/NotificationMakeCommand";
@@ -39,6 +44,7 @@ import { RequestMakeCommand } from "./commands/RequestMakeCommand";
 import { ResourceMakeCommand } from "./commands/ResourceMakeCommand";
 import { RouteCacheCommand } from "./commands/RouteCacheCommand";
 import { RouteClearCommand } from "./commands/RouteClearCommand";
+import { RouteListCommand } from "./commands/RouteListCommand";
 import { ScopeMakeCommand } from "./commands/ScopeMakeCommand";
 import { SeederMakeCommand } from "./commands/SeederMakeCommand";
 import { TestMakeCommand } from "./commands/TestMakeCommand";
@@ -88,10 +94,16 @@ const artisanCommands = {
     "artisan.make.test": TestMakeCommand,
     "artisan.make.trait": TraitMakeCommand,
     "artisan.make.view": ViewMakeCommand,
+    "artisan.migrate": MigrateCommand,
+    "artisan.migrate.fresh": MigrateFreshCommand,
     "artisan.migrate.install": MigrateInstallCommand,
+    "artisan.migrate.refresh": MigrateRefreshCommand,
+    "artisan.migrate.reset": MigrateResetCommand,
+    "artisan.migrate.rollback": MigrateRollbackCommand,
     "artisan.optimize": OptimizeCommand,
     "artisan.route.cache": RouteCacheCommand,
     "artisan.route.clear": RouteClearCommand,
+    "artisan.route.list": RouteListCommand,
     "artisan.up": UpCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,

@@ -1,12 +1,12 @@
 import * as vscode from "vscode";
 
-import { Command } from "@src/artisan/types";
-import { buildArtisanCommand } from "@src/artisan/builder";
-import { getWorkspaceFolders } from "@src/support/project";
 import { artisan } from "@src/support/php";
+import { buildArtisanCommand } from "@src/artisan/builder";
+import { Command } from "@src/artisan/types";
 import { getPathFromOutput } from "@src/support/artisan";
+import { getWorkspaceFolders } from "@src/support/project";
 import { openFileCommand } from ".";
-import { info } from "@src/support/logger";
+import { parseJson, openTableWebview } from "@src/support/table";
 import { showSuccessPopup } from "@src/support/popup";
 
 export const runArtisanMakeCommand = async (
@@ -53,9 +53,29 @@ export const runArtisanCommand = async (command: Command, uri?: vscode.Uri) => {
 
             break;
 
+        case "table":
+            const config = command.table;
+
+            const data = parseJson(result.output);
+            const viewId = `artisan-${command.name.replace(/[^a-z0-9]/gi, "-")}`;
+
+            openTableWebview(viewId, config.title, data);
+
+            break;
+
         case "run":
         default:
-            showSuccessPopup(result.output);
+            let lines = result.output
+                .split("\n")
+                .filter((line) => line.trim() !== "");
+
+            if (!command.successMessage || lines.length === 1) {
+                showSuccessPopup(result.output);
+                return;
+            }
+
+            showSuccessPopup(command.successMessage);
+
             break;
     }
 };
