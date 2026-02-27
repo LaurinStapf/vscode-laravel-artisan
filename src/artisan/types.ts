@@ -3,6 +3,7 @@ export type Command = RunCommand | MakeCommand | TableCommand;
 export interface BaseCommand {
     name: string;
     type?: CommandType | undefined;
+    successMessage?: string;
     arguments?: Argument[];
     options?: Option[];
 }
@@ -17,7 +18,7 @@ export interface MakeCommand extends BaseCommand {
 
 export interface TableCommand extends BaseCommand {
     type?: "table";
-    config: TableConfig;
+    table: Table;
 }
 
 export type CommandType = "run" | "make" | "table";
@@ -44,9 +45,6 @@ export interface Argument {
 
 export type ArgumentType = "namespaceOrPath" | "namespace" | "path" | "input";
 
-export interface TableConfig {
-    parseMode: ParseType;
-    successMessage?: string;
+export interface Table {
+    title: string;
 }
-
-export type ParseType = "cli" | "json";
