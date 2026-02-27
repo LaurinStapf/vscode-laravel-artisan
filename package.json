@@ -284,8 +284,33 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.migrate",
+                "title": "Migrate",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.migrate.fresh",
+                "title": "Migrate fresh",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.migrate.install",
                 "title": "Install migration table",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.migrate.refresh",
+                "title": "Refresh Migrations",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.migrate.reset",
+                "title": "Reset Migrations",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.migrate.rollback",
+                "title": "Rollback Migration",
                 "category": "Artisan"
             },
             {
@@ -296,6 +321,11 @@
             {
                 "command": "artisan.route.cache",
                 "title": "Cache routes",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.route.list",
+                "title": "List Routes",
                 "category": "Artisan"
             },
             {
