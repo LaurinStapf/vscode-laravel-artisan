@@ -1,4 +1,4 @@
-<p align="center"><img src="/art/logo.png" alt="Laravel Artisan Logo"></p>
+<p align="center"><img src="/art/logo.png" style="width: 281px;" alt="Laravel Artisan Logo"></p>
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=LaurinStapf.vscode-laravel-artisan-commands"><img src="https://img.shields.io/visual-studio-marketplace/d/LaurinStapf.vscode-laravel-artisan-commands?color=%234c1" alt="Total Downloads"></a>
