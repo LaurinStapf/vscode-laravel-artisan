@@ -114,4 +114,6 @@ A non-exhaustive list of currently included capabilities:
 ## On the Roadmap
 
 - (Re-)Add support for `serve` command.
+- Support for user created commands.
+- Integration with VS Code Task Provider API
 - Improve handling for commands with table result like `migrate`.
