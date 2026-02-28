@@ -2,6 +2,18 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.0.0 - 2026-02-28
+
+### What's Changed
+
+* All new guided input flow and complete refactoring by [@LaurinStapf](https://github.com/LaurinStapf)
+* Bump prettier from 3.8.0 to 3.8.1 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/44
+* Bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 8.53.0 to 8.54.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/47
+* Bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin from 8.53.0 to 8.54.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/45
+* Bump esbuild from 0.27.2 to 0.27.3 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/50
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v1.2.0...v2.0.0
+
 ## v1.2.0 - 2026-01-12
 
 ### What's Changed
