@@ -102,7 +102,6 @@ export const artisan = (
     const fullCommand = `${getCommand("artisan")} ${command}`.trim();
 
     return new Promise<string>((resolve, error) => {
-        console.log(fullCommand);
         cp.exec(
             fullCommand,
             {

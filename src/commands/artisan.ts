@@ -100,8 +100,6 @@ export const runCommand = async (
         workspaceFolder,
     );
 
-    console.log(artisanCommand);
-
     if (!artisanCommand) {
         return;
     }

@@ -295,8 +295,6 @@ export const buildArtisanCommand = async (
         return;
     }
 
-    console.log(userArguments);
-
     return [
         command.name,
         getArgumentsAsString(userArguments),

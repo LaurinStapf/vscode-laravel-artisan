@@ -329,8 +329,6 @@ export const openTableWebview = (
         return existing;
     }
 
-    console.log(data);
-
     const panel = vscode.window.createWebviewPanel(
         viewId,
         title,
