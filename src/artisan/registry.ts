@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { runArtisanCommand } from "@src/commands/artisan";
 
 import { CacheClearCommand } from "./commands/CacheClearCommand";
+import { CacheTableCommand } from "./commands/CacheTableCommand";
 import { CastMakeCommand } from "./commands/CastMakeCommand";
 import { ChannelMakeCommand } from "./commands/ChannelMakeCommand";
 import { ClassMakeCommand } from "./commands/ClassMakeCommand";
@@ -56,6 +57,7 @@ import { ViewMakeCommand } from "./commands/ViewMakeCommand";
 
 const artisanCommands = {
     "artisan.cache.clear": CacheClearCommand,
+    "artisan.cache.table": CacheTableCommand,
     "artisan.compiled.clear": CompiledClearCommand,
     "artisan.config.cache": ConfigCacheCommand,
     "artisan.config.clear": ConfigClearCommand,

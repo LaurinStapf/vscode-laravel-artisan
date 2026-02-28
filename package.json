@@ -89,6 +89,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.cache.table",
+                "title": "Cache table",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.compiled.clear",
                 "title": "Clear compiled classes",
                 "category": "Artisan"
