@@ -8,66 +8,120 @@
 
 # Laravel Artisan VS Code Extension
 
-Run Laravel Artisan commands directly from within Visual Studio Code.
+Run Laravel Artisan commands directly inside Visual Studio Code.
 
-This extension is focused on improving your Laravel developer experience by providing quick access to Artisan commands - without leaving your editor.
+This extension focuses on fast command execution and code generation workflows for Laravel projects, without switching to an external terminal.
 
 > [!IMPORTANT]
-> This extension is forked from [**TheColorRed/vscode-laravel-artisan**](https://github.com/TheColorRed/vscode-laravel-artisan), with ongoing maintenance and improvements.
+> This extension is forked from [TheColorRed/vscode-laravel-artisan](https://github.com/TheColorRed/vscode-laravel-artisan) and continues with active maintenance and improvements.
 
 ## Please Note
 
-- This extension executes `php artisan` commands in your workspace
-- It supports **multiple Laravel installations** within a single VS Code workspace
-- The extension is designed to complement other Laravel or PHP intelligence extensions
-  (e.g. Offical Laravel extension, PHP Intelephense)
-- Docker and WSL environments are supported
+- This extension executes `php artisan` commands in your current workspace.
+- Interactive prompts are used for required arguments and optional flags/options.
+- The extension can auto-detect your PHP runtime (`herd`, `local`, `docker`) or use a custom command template.
+- It supports multi-root VS Code workspaces and resolves the active Laravel project automatically.
+- This extension is focused on Laravel Artisan workflows (not general PHP language intelligence).
 
 ## Supported Versions
 
-- Laravel: Any version that includes the `artisan` CLI
-- PHP: A CLI-capable PHP installation (Herd, Docker, WSL or local)
+- Laravel: Any version with the `artisan` CLI available.
+- PHP: CLI-capable PHP runtime (local, Herd, Docker, WSL-based setups).
+- VS Code: `^1.89.0`.
 
 ## Features
 
-A non-exhaustive list of features provided by the extension:
+A non-exhaustive list of currently included capabilities:
 
-### Artisan Command Execution
 
-- Run **any default Artisan command** from VS Code
-- Interactive prompts for command arguments & options
+- Run Laravel Artisan commands via the VS Code Command Palette.
+- Guided input flow for command arguments and options.
+- Success and error feedback directly in VS Code.
 
-### Code Generation
+### Make Commands (Code Generation)
 
-- `make:*` commands for:
-  - Controllers
-  - Models
-  - Migrations
-  - Seeders
-  - Requests
-  - Middleware
-  - and much more...
+- `make:cast`
+- `make:channel`
+- `make:class`
+- `make:command`
+- `make:component`
+- `make:config`
+- `make:controller`
+- `make:enum`
+- `make:event`
+- `make:exception`
+- `make:factory`
+- `make:interface`
+- `make:job`
+- `make:job-middleware`
+- `make:listener`
+- `make:livewire`
+- `make:mail`
+- `make:middleware`
+- `make:migration`
+- `make:model`
+- `make:notification`
+- `make:observer`
+- `make:policy`
+- `make:provider`
+- `make:request`
+- `make:resource`
+- `make:scope`
+- `make:seeder`
+- `make:test`
+- `make:trait`
+- `make:view`
 
-### Database
+### Database & Migrations
 
-- Run, rollback, refresh, and reset migrations
-- Seed the database
+- `migrate`
+- `migrate:fresh`
+- `migrate:install`
+- `migrate:refresh`
+- `migrate:reset`
+- `migrate:rollback`
 
-### Routing
+### Cache, Routes & Optimization
 
-- View all registered routes
+- `cache:clear`
+- `cache:table`
+- `compiled:clear`
+- `config:cache`
+- `config:clear`
+- `route:cache`
+- `route:clear`
+- `route:list`
+- `view:cache`
+- `view:clear`
+- `optimize`
 
-### Maintenance
+### App Lifecycle & Utilities
 
-- Clear application caches
-- Generate application keys
-- Start / stop local PHP server
-
-### Docker & WSL
-
-- Run Artisan commands inside Docker containers
-- Native support for WSL (newer and legacy versions)
+- `down`
+- `up`
+- `event:generate`
+- `key:generate`
+- `docs`
 
 ## Usage
 
-Open the Command Palette and type: Here are things todo ;)
+1. Open a Laravel project in VS Code.
+2. Open the Command Palette.
+3. Search for `Artisan` and choose the command you want to run.
+4. Fill in prompted arguments/options.
+5. Review output in VS Code notifications (and output channel for errors/details).
+
+## On the Roadmap
+
+- Better command discovery and grouping in the Command Palette.
+- Extended support for newer Laravel Artisan commands.
+- Improved UX for long-running Artisan commands.
+- More command output visualizations inside VS Code.
+
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR.
+
+## License
+
+Licensed under the MIT License. See [LICENSE.md](LICENSE.md).
