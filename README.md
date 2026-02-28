@@ -113,15 +113,5 @@ A non-exhaustive list of currently included capabilities:
 
 ## On the Roadmap
 
-- Better command discovery and grouping in the Command Palette.
-- Extended support for newer Laravel Artisan commands.
-- Improved UX for long-running Artisan commands.
-- More command output visualizations inside VS Code.
-
-## Contributing
-
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR.
-
-## License
-
-Licensed under the MIT License. See [LICENSE.md](LICENSE.md).
+- (Re-)Add support for `serve` command.
+- Improve handling for commands with table result like `migrate`.
