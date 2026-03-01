@@ -2,6 +2,14 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.0.3 - 2026-03-01
+
+### What's Changed
+
+- Add cache table command to registered command type by [@LaurinStapf](https://github.com/LaurinStapf)
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v2.0.2...v2.0.3
+
 ## v2.0.2 - 2026-03-01
 
 ### What's Changed
