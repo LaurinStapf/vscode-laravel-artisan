@@ -1,19 +1,9 @@
-<p align="center"><img src="/art/logo.png" style="width: 281px;" alt="Laravel Artisan Logo"></p>
-
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=LaurinStapf.vscode-laravel-artisan-commands"><img src="https://img.shields.io/visual-studio-marketplace/d/LaurinStapf.vscode-laravel-artisan-commands?color=%234c1" alt="Total Downloads"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=LaurinStapf.vscode-laravel-artisan-commands"><img src="https://img.shields.io/visual-studio-marketplace/v/LaurinStapf.vscode-laravel-artisan-commands" alt="Latest Stable Version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=LaurinStapf.vscode-laravel-artisan-commands"><img src="https://img.shields.io/github/license/LaurinStapf/vscode-laravel-artisan" alt="License"></a>
-</p>
-
 # Laravel Artisan VS Code Extension
 
 Run Laravel Artisan commands directly inside Visual Studio Code.
 
 This extension focuses on fast command execution and code generation workflows for Laravel projects, without switching to an external terminal.
-
-> [!IMPORTANT]
-> This extension is forked from [TheColorRed/vscode-laravel-artisan](https://github.com/TheColorRed/vscode-laravel-artisan) and continues with active maintenance and improvements.
+This original extension is forked from [TheColorRed/vscode-laravel-artisan](https://github.com/TheColorRed/vscode-laravel-artisan) and continues with active maintenance and improvements.
 
 ## Please Note
 

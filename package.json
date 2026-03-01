@@ -13,7 +13,7 @@
         "php",
         "herd"
     ],
-    "icon": "art/icon.png",
+    "icon": "icon.png",
     "homepage": "https://github.com/laurinstapf/vscode-laravel-artisan",
     "repository": {
         "type": "git",
