@@ -2,6 +2,14 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.0.2 - 2026-03-01
+
+### What's Changed
+
+- Update metadata and readme by [@LaurinStapf](https://github.com/LaurinStapf)
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v2.0.1...v2.0.2
+
 ## v2.0.1 - 2026-02-28
 
 ### What's Changed
