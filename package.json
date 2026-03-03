@@ -375,6 +375,7 @@
         "installLocal": "vsce package && code --install-extension vscode-laravel-artisan-commands-%npm_package_version%.vsix"
     },
     "devDependencies": {
+        "@stylistic/eslint-plugin": "^5.9.0",
         "@types/mocha": "^10.0.6",
         "@types/node": "18.x",
         "@types/vscode": "^1.89.0",
