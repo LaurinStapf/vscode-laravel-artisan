@@ -2,6 +2,17 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.1.0 - 2026-03-03
+
+### What's Changed
+
+* Add seed command by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/61
+* Bump eslint from 8.57.1 to 10.0.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/58
+* Bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin from 6.21.0 to 8.56.1 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/57
+* Bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 6.21.0 to 8.56.1 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/59
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v2.0.4...v2.1.0
+
 ## v2.0.4 - 2026-03-03
 
 ### What's Changed
