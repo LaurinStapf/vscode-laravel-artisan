@@ -2,6 +2,14 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.0.4 - 2026-03-03
+
+### What's Changed
+
+* Fix: use fsPath instead of path for workspace folder URI in runCommand by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/60
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v2.0.3...v2.0.4
+
 ## v2.0.3 - 2026-03-01
 
 ### What's Changed
