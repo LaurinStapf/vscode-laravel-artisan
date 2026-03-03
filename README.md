@@ -64,6 +64,7 @@ A non-exhaustive list of currently included capabilities:
 
 ### Database & Migrations
 
+- `db:seed`
 - `migrate`
 - `migrate:fresh`
 - `migrate:install`

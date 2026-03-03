@@ -7,6 +7,7 @@ export type RegisteredCommand =
     | "artisan.compiled.clear"
     | "artisan.config.cache"
     | "artisan.config.clear"
+    | "artisan.database.seed"
     | "artisan.docs"
     | "artisan.down"
     | "artisan.event.generate"
