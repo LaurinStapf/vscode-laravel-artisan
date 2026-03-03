@@ -1,10 +1,7 @@
 import * as cp from "child_process";
 import { config } from "./config";
 import { info } from "./logger";
-import {
-    PhpEnvironment,
-    phpEnvironments,
-} from "./phpEnvironments";
+import { PhpEnvironment, phpEnvironments } from "./phpEnvironments";
 import { showErrorPopup } from "./popup";
 import { projectPath } from "./project";
 
