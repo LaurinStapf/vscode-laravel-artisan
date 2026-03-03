@@ -104,7 +104,7 @@ export const runCommand = async (
         return;
     }
 
-    const output = await artisan(artisanCommand, workspaceFolder.uri.path);
+    const output = await artisan(artisanCommand, workspaceFolder.uri.fsPath);
 
     const error = output.match(/ERROR\s+(.*)/);
 
