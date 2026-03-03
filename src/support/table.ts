@@ -30,7 +30,7 @@ export const parseJson = (json: string): TableData => {
             if (value && typeof value === "object") {
                 for (const v of Object.values(value)) {
                     const found = findArray(v);
-                    if (found) return found;
+                    if (found) {return found;}
                 }
             }
 

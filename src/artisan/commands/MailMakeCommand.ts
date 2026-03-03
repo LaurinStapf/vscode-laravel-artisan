@@ -1,4 +1,4 @@
-import { Command, MakeCommand } from "../types";
+import { MakeCommand } from "../types";
 import { kebab } from "@src/support/str";
 import { forceOption, testOptions } from "@src/artisan/options";
 

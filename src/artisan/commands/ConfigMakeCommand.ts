@@ -1,4 +1,4 @@
-import { Command, MakeCommand } from "../types";
+import { MakeCommand } from "../types";
 import { forceOption } from "../options";
 
 export const ConfigMakeCommand: MakeCommand = {

@@ -1,4 +1,4 @@
-import { Command, MakeCommand } from "../types";
+import { MakeCommand } from "../types";
 import { forceOption, testOptions } from "@src/artisan/options";
 
 export const JobMakeCommand: MakeCommand = {

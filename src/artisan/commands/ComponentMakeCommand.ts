@@ -1,4 +1,4 @@
-import { Command, MakeCommand, RunCommand } from "../types";
+import { MakeCommand } from "../types";
 import { forceOption, testOptions } from "../options";
 
 export const ComponentMakeCommand: MakeCommand = {

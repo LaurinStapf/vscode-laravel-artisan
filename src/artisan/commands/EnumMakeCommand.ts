@@ -1,4 +1,4 @@
-import { Command, MakeCommand } from "../types";
+import { MakeCommand } from "../types";
 
 export const EnumMakeCommand: MakeCommand = {
     name: "make:enum",

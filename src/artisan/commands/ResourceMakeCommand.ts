@@ -1,4 +1,4 @@
-import { Command, MakeCommand } from "../types";
+import { MakeCommand } from "../types";
 
 export const ResourceMakeCommand: MakeCommand = {
     name: "make:resource",

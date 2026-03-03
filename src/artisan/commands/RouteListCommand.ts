@@ -1,4 +1,4 @@
-import { Command, TableCommand } from "../types";
+import { TableCommand } from "../types";
 
 /**
  * `route:list` is called with `--json` appended automatically so the output

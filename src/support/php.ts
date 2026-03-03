@@ -1,15 +1,12 @@
 import * as cp from "child_process";
-import * as fs from "fs";
-import * as vscode from "vscode";
 import { config } from "./config";
-import { error, info } from "./logger";
+import { info } from "./logger";
 import {
     PhpEnvironment,
     phpEnvironments,
-    phpEnvironmentsThatUseRelativePaths,
 } from "./phpEnvironments";
 import { showErrorPopup } from "./popup";
-import { getWorkspaceFolders, projectPath } from "./project";
+import { projectPath } from "./project";
 
 let defaultPhpCommand: string | null = null;
 
