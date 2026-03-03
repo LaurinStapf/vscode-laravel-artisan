@@ -109,6 +109,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.database.seed",
+                "title": "Seed database",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.docs",
                 "title": "Docs",
                 "category": "Artisan"

@@ -13,6 +13,7 @@ import { ConfigCacheCommand } from "./commands/ConfigCacheComand";
 import { ConfigClearCommand } from "./commands/ConfigClearCommand";
 import { ConfigMakeCommand } from "./commands/ConfigMakeCommand";
 import { ControllerMakeCommand } from "./commands/ControllerMakeCommand";
+import { DatabaseSeedCommand } from "./commands/DatabaseSeedCommand";
 import { DocsCommand } from "./commands/DocsCommand";
 import { DownCommand } from "./commands/DownCommand";
 import { EnumMakeCommand } from "./commands/EnumMakeCommand";
@@ -61,6 +62,7 @@ const artisanCommands = {
     "artisan.compiled.clear": CompiledClearCommand,
     "artisan.config.cache": ConfigCacheCommand,
     "artisan.config.clear": ConfigClearCommand,
+    "artisan.database.seed": DatabaseSeedCommand,
     "artisan.docs": DocsCommand,
     "artisan.down": DownCommand,
     "artisan.event.generate": EventGenerateCommand,
