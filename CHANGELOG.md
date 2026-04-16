@@ -2,6 +2,15 @@
 
 All notable changes to the Laravel Artisan extension will be documented in this file.
 
+## v2.1.1 - 2026-04-16
+
+### What's Changed
+
+* Bump dependencies by [@LaurinStapf](https://github.com/LaurinStapf)
+* Fix typo in codebase by [@LaurinStapf](https://github.com/LaurinStapf) in https://github.com/LaurinStapf/vscode-laravel-artisan/pull/68
+
+**Full Changelog**: https://github.com/LaurinStapf/vscode-laravel-artisan/compare/v2.1.0...v2.1.1
+
 ## v2.1.0 - 2026-03-03
 
 ### What's Changed
