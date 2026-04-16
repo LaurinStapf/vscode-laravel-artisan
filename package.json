@@ -224,7 +224,7 @@
                 "category": "Artisan"
             },
             {
-                "command": "artisan.make.midleware",
+                "command": "artisan.make.middleware",
                 "title": "Make Middleware",
                 "category": "Artisan"
             },
