@@ -56,17 +56,7 @@ import { ViewCacheCommand } from "./commands/ViewCacheCommand";
 import { ViewClearCommand } from "./commands/ViewClearCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
 
-const artisanCommands = {
-    "artisan.cache.clear": CacheClearCommand,
-    "artisan.cache.table": CacheTableCommand,
-    "artisan.compiled.clear": CompiledClearCommand,
-    "artisan.config.cache": ConfigCacheCommand,
-    "artisan.config.clear": ConfigClearCommand,
-    "artisan.database.seed": DatabaseSeedCommand,
-    "artisan.docs": DocsCommand,
-    "artisan.down": DownCommand,
-    "artisan.event.generate": EventGenerateCommand,
-    "artisan.key.generate": KeyGenerateCommand,
+const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
     "artisan.make.channel": ChannelMakeCommand,
     "artisan.make.class": ClassMakeCommand,
@@ -98,6 +88,28 @@ const artisanCommands = {
     "artisan.make.test": TestMakeCommand,
     "artisan.make.trait": TraitMakeCommand,
     "artisan.make.view": ViewMakeCommand,
+};
+
+export const registerArtisanMakeCommands = () => {
+    return Object.entries(artisanMakeCommands).map(([name, command]) => {
+        return vscode.commands.registerCommand(name, (uri: vscode.Uri) => {
+            runArtisanCommand(command, uri);
+        });
+    });
+};
+
+
+const artisanCommands = {
+    "artisan.cache.clear": CacheClearCommand,
+    "artisan.cache.table": CacheTableCommand,
+    "artisan.compiled.clear": CompiledClearCommand,
+    "artisan.config.cache": ConfigCacheCommand,
+    "artisan.config.clear": ConfigClearCommand,
+    "artisan.database.seed": DatabaseSeedCommand,
+    "artisan.docs": DocsCommand,
+    "artisan.down": DownCommand,
+    "artisan.event.generate": EventGenerateCommand,
+    "artisan.key.generate": KeyGenerateCommand,
     "artisan.migrate": MigrateCommand,
     "artisan.migrate.fresh": MigrateFreshCommand,
     "artisan.migrate.install": MigrateInstallCommand,
