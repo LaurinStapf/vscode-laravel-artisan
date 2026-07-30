@@ -2,6 +2,7 @@
 // Run 'php generate-registered-commands.php' to regenerate.
 
 export type RegisteredCommand =
+    | "artisan.auth.clearResets"
     | "artisan.cache.clear"
     | "artisan.config.cache"
     | "artisan.config.clear"

@@ -84,6 +84,11 @@
         },
         "commands": [
             {
+                "command": "artisan.auth.clearResets",
+                "title": "Flush auth",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.cache.clear",
                 "title": "Clear cache",
                 "category": "Artisan"

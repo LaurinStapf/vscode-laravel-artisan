@@ -74,6 +74,7 @@ import { ScheduleListCommand } from "./commands/ScheduleListCommand";
 import { ScheduleTestCommand } from "./commands/ScheduleTestCommand";
 import { SchemaDumpCommand } from "./commands/SchemaDumpCommand";
 import { WayfinderGenerateCommand } from "./commands/WayfinderGenerateCommand";
+import { AuthClearResetsCommand } from "./commands/AuthClearResetsCommand";
 
 const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
@@ -118,6 +119,7 @@ export const registerArtisanMakeCommands = () => {
 };
 
 const artisanCommands = {
+    "artisan.auth.clearResets": AuthClearResetsCommand,
     "artisan.cache.clear": CacheClearCommand,
     "artisan.config.cache": ConfigCacheCommand,
     "artisan.config.clear": ConfigClearCommand,
