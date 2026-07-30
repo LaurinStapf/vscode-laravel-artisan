@@ -63,6 +63,7 @@ export type RegisteredCommand =
     | "artisan.schedule.list"
     | "artisan.schedule.test"
     | "artisan.schema.dump"
+    | "artisan.serve"
     | "artisan.tinker"
     | "artisan.view.cache"
     | "artisan.view.clear"

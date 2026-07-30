@@ -389,6 +389,11 @@
                 "category": "Artisan"
             },
             {
+                "command": "artisan.serve",
+                "title": "Serve",
+                "category": "Artisan"
+            },
+            {
                 "command": "artisan.tinker",
                 "title": "Tinker",
                 "category": "Artisan"
