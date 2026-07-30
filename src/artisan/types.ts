@@ -1,4 +1,4 @@
-export interface command {
+export interface Command {
     name: string;
     arguments: Argument[];
     options?: Option[];
