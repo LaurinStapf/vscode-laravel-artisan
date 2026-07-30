@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const ObserverMakeCommand: MakeCommand = {
+export const ObserverMakeCommand: Command = {
     name: "make:observer",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

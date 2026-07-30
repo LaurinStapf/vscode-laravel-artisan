@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const MigrationMakeCommand: MakeCommand = {
+export const MigrationMakeCommand: Command = {
     name: "make:migration",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

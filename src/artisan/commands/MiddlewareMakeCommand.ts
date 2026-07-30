@@ -1,9 +1,9 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { forceOption } from "@src/artisan/options";
 
-export const MiddlewareMakeCommand: MakeCommand = {
+export const MiddlewareMakeCommand: Command = {
     name: "make:middleware",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

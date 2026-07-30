@@ -8,6 +8,12 @@ import { escapeNamespace } from "@src/support/util";
 const Continue = "Continue";
 const EndSelection = "End Selection";
 
+export const artisanBuilderUi = {
+    showInputBox: vscode.window.showInputBox.bind(vscode.window),
+    showQuickPick: vscode.window.showQuickPick.bind(vscode.window),
+    showWarningMessage: vscode.window.showWarningMessage.bind(vscode.window),
+};
+
 const getValueForArgumentType = async (
     value: string,
     arguemntType: ArgumentType | undefined,
@@ -52,19 +58,15 @@ const getValueForArgumentType = async (
     }
 };
 
-const validateInput = (
-    input: string,
-    field: string,
-    allowSpaces = false,
-): boolean => {
+const validateInput = (input: string, field: string): boolean => {
     if (input === "") {
-        vscode.window.showWarningMessage(`${field} is required`);
+        artisanBuilderUi.showWarningMessage(`${field} is required`);
 
         return false;
     }
 
-    if (!allowSpaces && /\s/.test(input)) {
-        vscode.window.showWarningMessage(`${field} cannot contain spaces`);
+    if (/\s/.test(input)) {
+        artisanBuilderUi.showWarningMessage(`${field} cannot contain spaces`);
 
         return false;
     }
@@ -82,52 +84,16 @@ const getUserArguments = async (
     for (const argument of commandArguments) {
         let input = undefined;
 
-        if (argument.isOptional) {
-            const choice = await vscode.window.showQuickPick(
-                [
-                    {
-                        label: Continue,
-                        command: Continue,
-                        exlcude: EndSelection,
-                    },
-                    {
-                        label: EndSelection,
-                        command: EndSelection,
-                        exlcude: Continue,
-                    },
-                ],
-                {
-                    placeHolder: argument.description,
-                },
-            );
-
-            // Exit when the user press ESC
-            if (choice === undefined) {
-                return;
-            }
-
-            if (choice.command === EndSelection) {
-                break;
-            }
-        }
-
         while (!input) {
-            input = await vscode.window.showInputBox({
+            input = await artisanBuilderUi.showInputBox({
                 prompt: argument.description,
             });
 
-            // Exit when the user press ESC
             if (input === undefined) {
                 return;
             }
 
-            if (
-                !validateInput(
-                    input,
-                    `Argument ${argument.name}`,
-                    argument.allowSpaces,
-                )
-            ) {
+            if (!validateInput(input, `Argument ${argument.name}`)) {
                 input = undefined;
             }
         }
@@ -165,7 +131,7 @@ const getUserOptions = async (
     while (true) {
         const optionsAsString = getOptionsAsString(userOptions);
 
-        const choice = await vscode.window.showQuickPick(
+        const choice = await artisanBuilderUi.showQuickPick(
             [
                 {
                     label: EndSelection,
@@ -197,7 +163,7 @@ const getUserOptions = async (
         );
 
         if (option?.type === "select" && option?.options) {
-            const optionsChoice = await vscode.window.showQuickPick(
+            const optionsChoice = await artisanBuilderUi.showQuickPick(
                 Object.entries(option.options()).map(([key, value]) => ({
                     label: key,
                     command: value,
@@ -226,7 +192,7 @@ const getUserOptions = async (
                     _default = option.default(...Object.values(userArguments));
                 }
 
-                input = await vscode.window.showInputBox({
+                input = await artisanBuilderUi.showInputBox({
                     prompt: option.description,
                     value: _default ?? "",
                 });
@@ -236,13 +202,7 @@ const getUserOptions = async (
                     break;
                 }
 
-                if (
-                    !validateInput(
-                        input,
-                        `Value for ${option.name}`,
-                        option.allowSpaces,
-                    )
-                ) {
+                if (!validateInput(input, `Value for ${option.name}`)) {
                     input = undefined;
                 }
             }
@@ -300,6 +260,6 @@ export const buildArtisanCommand = async (
         getArgumentsAsString(userArguments),
         getOptionsAsString(userOptions),
     ]
-        .filter(Boolean)
+        .filter((part) => part.length > 0)
         .join(" ");
 };

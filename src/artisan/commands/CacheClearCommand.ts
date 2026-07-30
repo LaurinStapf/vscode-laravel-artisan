@@ -1,8 +1,9 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const CacheClearCommand: RunCommand = {
+export const CacheClearCommand: Command = {
     name: "cache:clear",
-    type: "run",
+    arguments: [],
+    runIn: "terminal",
     options: [
         {
             name: "--tags",

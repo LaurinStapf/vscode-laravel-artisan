@@ -1,9 +1,12 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const MigrateRefreshCommand: RunCommand = {
+export const MigrateRefreshCommand: Command = {
     name: "migrate:refresh",
-    type: "run",
-    successMessage: "Refreshed database.",
+    runIn: "terminal",
+    confirmation: {
+        message: "This will roll back and re-run migrations.",
+    },
+    arguments: [],
     options: [
         {
             name: "--database",
@@ -12,17 +15,7 @@ export const MigrateRefreshCommand: RunCommand = {
         },
         {
             name: "--force",
-            description: "Force the operation to run when in production",
-        },
-        {
-            name: "--path",
-            type: "input",
-            description: "The path(s) to the migrations files to be executed",
-        },
-        {
-            name: "--realpath",
-            description:
-                " Indicate any provided migration file paths are pre-resolved absolute paths",
+            description: "Force the operation to run in production",
         },
         {
             name: "--seed",
@@ -38,7 +31,17 @@ export const MigrateRefreshCommand: RunCommand = {
         {
             name: "--step",
             type: "input",
-            description: "The number of migrations to be reverted & re-run",
+            description: "The number of migrations to be reverted and re-run",
+        },
+        {
+            name: "--path",
+            type: "input",
+            description: "The path(s) to the migrations files to be executed",
+        },
+        {
+            name: "--realpath",
+            description:
+                "Indicate any provided migration file paths are pre-resolved absolute paths",
         },
     ],
 };

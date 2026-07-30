@@ -1,12 +1,14 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const DatabaseSeedCommand: RunCommand = {
+export const DbSeedCommand: Command = {
     name: "db:seed",
-    type: "run",
+    arguments: [],
+    runIn: "terminal",
     options: [
         {
             name: "--class",
             type: "input",
+            default: "Database\\Seeders\\DatabaseSeeder",
             description: "The class name of the root seeder",
         },
         {

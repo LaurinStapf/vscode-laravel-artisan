@@ -1,9 +1,9 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { forceOption, testOptions } from "../options";
 
-export const ComponentMakeCommand: MakeCommand = {
+export const ComponentMakeCommand: Command = {
     name: "make:component",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

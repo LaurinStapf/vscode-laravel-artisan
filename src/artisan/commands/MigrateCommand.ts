@@ -1,9 +1,9 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const MigrateCommand: RunCommand = {
+export const MigrateCommand: Command = {
     name: "migrate",
-    type: "run",
-    successMessage: "Migrated database.",
+    runIn: "terminal",
+    arguments: [],
     options: [
         {
             name: "--database",
@@ -17,8 +17,7 @@ export const MigrateCommand: RunCommand = {
         {
             name: "--path",
             type: "input",
-            description:
-                "The path(s) to the migrations files to be executed (multiple values allowed)",
+            description: "The path(s) to the migrations files to be executed",
             excludeIf: ["--schema-path"],
         },
         {
@@ -55,9 +54,8 @@ export const MigrateCommand: RunCommand = {
         },
         {
             name: "--isolated",
-            type: "input",
             description:
-                "Do not run the command if another instance of the command is already running [default: false]",
+                "Do not run the command if another instance is already running",
         },
     ],
 };

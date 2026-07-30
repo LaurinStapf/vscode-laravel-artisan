@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-import { artisan } from "@src/support/php";
+import { artisan, runArtisanInTerminal } from "@src/support/php";
 import { buildArtisanCommand } from "@src/artisan/builder";
 import { Command } from "@src/artisan/types";
 import { getPathFromOutput } from "@src/support/artisan";
@@ -9,81 +9,22 @@ import { openFileCommand } from ".";
 import { parseJson, openTableWebview } from "@src/support/table";
 import { showSuccessPopup } from "@src/support/popup";
 
-export const runArtisanMakeCommand = async (
+export const runArtisanCommand = async (
     command: Command,
     uri?: vscode.Uri | undefined,
 ) => {
-    const result = await runCommand(command, uri);
+    if (command.confirmation) {
+        const choice = await vscode.window.showWarningMessage(
+            command.confirmation.message,
+            { modal: true },
+            "Run",
+        );
 
-    if (!result) {
-        return;
+        if (choice !== "Run") {
+            return;
+        }
     }
 
-    const outputPath = getPathFromOutput(
-        result.output,
-        command.name,
-        result.workspaceFolder,
-        result.uri,
-    );
-
-    if (outputPath) {
-        openFileCommand(vscode.Uri.file(outputPath), 1, 1);
-    }
-};
-
-export const runArtisanCommand = async (command: Command, uri?: vscode.Uri) => {
-    const result = await runCommand(command, uri);
-
-    if (!result) {
-        return;
-    }
-
-    switch (command.type) {
-        case "make":
-            const outputPath = getPathFromOutput(
-                result.output,
-                command.name,
-                result.workspaceFolder,
-                result.uri,
-            );
-
-            if (outputPath) {
-                openFileCommand(vscode.Uri.file(outputPath), 1, 1);
-            }
-
-            break;
-
-        case "table":
-            const config = command.table;
-
-            const data = parseJson(result.output);
-            const viewId = `artisan-${command.name.replace(/[^a-z0-9]/gi, "-")}`;
-
-            openTableWebview(viewId, config.title, data);
-
-            break;
-
-        case "run":
-        default:
-            let lines = result.output
-                .split("\n")
-                .filter((line) => line.trim() !== "");
-
-            if (!command.successMessage || lines.length === 1) {
-                showSuccessPopup(result.output);
-                return;
-            }
-
-            showSuccessPopup(command.successMessage);
-
-            break;
-    }
-};
-
-export const runCommand = async (
-    command: Command,
-    uri?: vscode.Uri | undefined,
-) => {
     const workspaceFolder = getWorkspaceFolder(uri);
 
     if (!workspaceFolder) {
@@ -104,6 +45,31 @@ export const runCommand = async (
         return;
     }
 
+    if (command.runIn === "terminal") {
+        runArtisanInTerminal(artisanCommand, workspaceFolder.uri.fsPath);
+
+        return;
+    }
+
+    const output = await executeArtisanCommand(artisanCommand, workspaceFolder);
+
+    if (!output) {
+        return;
+    }
+
+    if (command.postRun === "openGeneratedFile") {
+        openGeneratedFile(command, {
+            output,
+            workspaceFolder,
+            uri,
+        });
+    }
+};
+
+const executeArtisanCommand = async (
+    artisanCommand: string,
+    workspaceFolder: vscode.WorkspaceFolder,
+): Promise<string | undefined> => {
     const output = await artisan(artisanCommand, workspaceFolder.uri.fsPath);
 
     const error = output.match(/ERROR\s+(.*)/);
@@ -114,7 +80,29 @@ export const runCommand = async (
         return;
     }
 
-    return { output, workspaceFolder, uri };
+    return output;
+};
+
+const openGeneratedFile = (
+    command: Command,
+    result: {
+        output: string;
+        workspaceFolder: vscode.WorkspaceFolder;
+        uri: vscode.Uri;
+    },
+) => {
+    const outputPath = getPathFromOutput(
+        result.output,
+        command.name,
+        result.workspaceFolder,
+        result.uri,
+    );
+
+    if (!outputPath) {
+        return;
+    }
+
+    openFileCommand(vscode.Uri.file(outputPath), 1, 1);
 };
 
 const getWorkspaceFolder = (

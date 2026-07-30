@@ -1,9 +1,9 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const MigrateResetCommand: RunCommand = {
-    name: "migrate:reset",
-    type: "run",
-    successMessage: "Reseted database.",
+export const MigrateStatusCommand: Command = {
+    name: "migrate:status",
+    runIn: "terminal",
+    arguments: [],
     options: [
         {
             name: "--database",
@@ -11,13 +11,13 @@ export const MigrateResetCommand: RunCommand = {
             description: "The database connection to use",
         },
         {
-            name: "--force",
-            description: "Force the operation to run when in production",
+            name: "--pending",
+            description: "Dump information about pending migrations",
         },
         {
             name: "--path",
             type: "input",
-            description: "The path(s) to the migrations files to be executed",
+            description: "The path(s) to the migrations files to use",
         },
         {
             name: "--realpath",

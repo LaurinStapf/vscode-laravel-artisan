@@ -1,4 +1,5 @@
 import * as cp from "child_process";
+import * as vscode from "vscode";
 import { config } from "./config";
 import { info } from "./logger";
 import { PhpEnvironment, phpEnvironments } from "./phpEnvironments";
@@ -89,6 +90,17 @@ const getDefaultPhpCommand = (): string => {
     return defaultPhpCommand;
 };
 
+const getFormattedError = (
+    error: string,
+    description: string | null,
+): string => {
+    if (!description) {
+        return error;
+    }
+
+    return `${description}\n\n${error}`;
+};
+
 export const artisan = (
     command: string,
     workspaceFolder: string,
@@ -116,4 +128,27 @@ export const artisan = (
             },
         );
     });
+};
+
+let artisanTerminal: vscode.Terminal | undefined;
+
+export const runArtisanInTerminal = async (
+    command: string,
+    workspaceFolder: string,
+): Promise<void> => {
+    const fullCommand = `${getCommand("artisan")} ${command}`.trim();
+
+    if (
+        !artisanTerminal ||
+        !vscode.window.terminals.includes(artisanTerminal)
+    ) {
+        artisanTerminal = vscode.window.createTerminal({
+            name: "Laravel Artisan",
+            cwd: workspaceFolder,
+        });
+    }
+
+    artisanTerminal.show();
+    await vscode.commands.executeCommand("workbench.action.terminal.clear");
+    artisanTerminal.sendText(fullCommand, true);
 };

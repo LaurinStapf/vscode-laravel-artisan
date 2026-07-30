@@ -1,10 +1,10 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { kebab } from "@src/support/str";
 import { forceOption, testOptions } from "@src/artisan/options";
 
-export const MailMakeCommand: MakeCommand = {
+export const MailMakeCommand: Command = {
     name: "make:mail",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

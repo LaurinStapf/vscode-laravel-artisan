@@ -55,18 +55,28 @@ import { UpCommand } from "./commands/UpCommand";
 import { ViewCacheCommand } from "./commands/ViewCacheCommand";
 import { ViewClearCommand } from "./commands/ViewClearCommand";
 import { ViewMakeCommand } from "./commands/ViewMakeCommand";
+import { DbSeedCommand } from "./commands/DbSeedCommand";
+import { DbCommand } from "./commands/DbCommand";
+import { DbTableCommand } from "./commands/DbTableCommand";
+import { DbWipeCommand } from "./commands/DbWipeCommand";
+import { MigrateStatusCommand } from "./commands/MigrateStatusCommand";
+import { TinkerCommand } from "./commands/TinkerCommand";
+import { PailCommand } from "./commands/PailCommand";
+import { EventListCommand } from "./commands/EventListCommand";
+import { ModelShowCommand } from "./commands/ModelShowCommand";
+import { PestDatasetCommand } from "./commands/PestDatasetCommand";
+import { QueueClearCommand } from "./commands/QueueClearCommand";
+import { QueueFailedCommand } from "./commands/QueueFailedCommand";
+import { QueueFlushCommand } from "./commands/QueueFlushCommand";
+import { QueueForgetCommand } from "./commands/QueueForgetCommand";
+import { QueueRetryCommand } from "./commands/QueueRetryCommand";
+import { ScheduleListCommand } from "./commands/ScheduleListCommand";
+import { ScheduleTestCommand } from "./commands/ScheduleTestCommand";
+import { SchemaDumpCommand } from "./commands/SchemaDumpCommand";
+import { WayfinderGenerateCommand } from "./commands/WayfinderGenerateCommand";
+import { AuthClearResetsCommand } from "./commands/AuthClearResetsCommand";
 
-const artisanCommands = {
-    "artisan.cache.clear": CacheClearCommand,
-    "artisan.cache.table": CacheTableCommand,
-    "artisan.compiled.clear": CompiledClearCommand,
-    "artisan.config.cache": ConfigCacheCommand,
-    "artisan.config.clear": ConfigClearCommand,
-    "artisan.database.seed": DatabaseSeedCommand,
-    "artisan.docs": DocsCommand,
-    "artisan.down": DownCommand,
-    "artisan.event.generate": EventGenerateCommand,
-    "artisan.key.generate": KeyGenerateCommand,
+const artisanMakeCommands = {
     "artisan.make.cast": CastMakeCommand,
     "artisan.make.channel": ChannelMakeCommand,
     "artisan.make.class": ClassMakeCommand,
@@ -87,7 +97,7 @@ const artisanCommands = {
     "artisan.make.middleware": MiddlewareMakeCommand,
     "artisan.make.migration": MigrationMakeCommand,
     "artisan.make.model": ModelMakeCommand,
-    "artisan.make.notificaiton": NotificationMakeCommand,
+    "artisan.make.notification": NotificationMakeCommand,
     "artisan.make.observer": ObserverMakeCommand,
     "artisan.make.policy": PolicyMakeCommand,
     "artisan.make.provider": ProviderMakeCommand,
@@ -98,19 +108,50 @@ const artisanCommands = {
     "artisan.make.test": TestMakeCommand,
     "artisan.make.trait": TraitMakeCommand,
     "artisan.make.view": ViewMakeCommand,
+};
+
+export const registerArtisanMakeCommands = () => {
+    return Object.entries(artisanMakeCommands).map(([name, command]) => {
+        return vscode.commands.registerCommand(name, (uri: vscode.Uri) => {
+            runArtisanCommand(command, uri);
+        });
+    });
+};
+
+const artisanCommands = {
+    "artisan.auth.clearResets": AuthClearResetsCommand,
+    "artisan.cache.clear": CacheClearCommand,
+    "artisan.config.cache": ConfigCacheCommand,
+    "artisan.config.clear": ConfigClearCommand,
+    "artisan.db": DbCommand,
+    "artisan.db.seed": DbSeedCommand,
+    "artisan.db.table": DbTableCommand,
+    "artisan.db.wipe": DbWipeCommand,
+    "artisan.event.list": EventListCommand,
+    "artisan.key.generate": KeyGenerateCommand,
     "artisan.migrate": MigrateCommand,
     "artisan.migrate.fresh": MigrateFreshCommand,
-    "artisan.migrate.install": MigrateInstallCommand,
     "artisan.migrate.refresh": MigrateRefreshCommand,
-    "artisan.migrate.reset": MigrateResetCommand,
     "artisan.migrate.rollback": MigrateRollbackCommand,
-    "artisan.optimize": OptimizeCommand,
+    "artisan.migrate.status": MigrateStatusCommand,
+    "artisan.model.show": ModelShowCommand,
+    "artisan.pail": PailCommand,
+    "artisan.pest.dataset": PestDatasetCommand,
+    "artisan.queue.clear": QueueClearCommand,
+    "artisan.queue.failed": QueueFailedCommand,
+    "artisan.queue.flush": QueueFlushCommand,
+    "artisan.queue.forget": QueueForgetCommand,
+    "artisan.queue.retry": QueueRetryCommand,
     "artisan.route.cache": RouteCacheCommand,
     "artisan.route.clear": RouteClearCommand,
     "artisan.route.list": RouteListCommand,
-    "artisan.up": UpCommand,
+    "artisan.schedule.list": ScheduleListCommand,
+    "artisan.schedule.test": ScheduleTestCommand,
+    "artisan.schema.dump": SchemaDumpCommand,
+    "artisan.tinker": TinkerCommand,
     "artisan.view.cache": ViewCacheCommand,
     "artisan.view.clear": ViewClearCommand,
+    "artisan.wayfinder.generate": WayfinderGenerateCommand,
 };
 
 export const registerArtisanCommands = () => {

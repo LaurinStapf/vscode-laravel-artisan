@@ -1,5 +1,8 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const ViewClearCommand: RunCommand = {
+export const ViewClearCommand: Command = {
     name: "view:clear",
+    arguments: [],
+    runIn: "terminal",
+    options: [],
 };

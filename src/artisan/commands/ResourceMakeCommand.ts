@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const ResourceMakeCommand: MakeCommand = {
+export const ResourceMakeCommand: Command = {
     name: "make:resource",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

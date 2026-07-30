@@ -1,5 +1,8 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const ViewCacheCommand: RunCommand = {
+export const ViewCacheCommand: Command = {
     name: "view:cache",
+    arguments: [],
+    runIn: "terminal",
+    options: [],
 };

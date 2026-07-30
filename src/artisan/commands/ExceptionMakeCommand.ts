@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const ExceptionMakeCommand: MakeCommand = {
+export const ExceptionMakeCommand: Command = {
     name: "make:exception",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",
