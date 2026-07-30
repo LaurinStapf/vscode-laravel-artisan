@@ -1,35 +1,25 @@
-export type Command = RunCommand | MakeCommand | TableCommand;
-
-export interface BaseCommand {
+export interface command {
     name: string;
-    type?: CommandType | undefined;
-    successMessage?: string;
-    arguments?: Argument[];
+    arguments: Argument[];
     options?: Option[];
+    postRun?: PostRunAction | undefined;
+    confirmation?: Confirmation | undefined;
+    runIn?: CommandRunTarget | undefined;
 }
 
-export interface RunCommand extends BaseCommand {
-    type?: "run";
-}
+export type PostRunAction = "openGeneratedFile" | "none";
+export type CommandRunTarget = "background" | "terminal";
 
-export interface MakeCommand extends BaseCommand {
-    type?: "make";
+export interface Confirmation {
+    message: string,
 }
-
-export interface TableCommand extends BaseCommand {
-    type?: "table";
-    table: Table;
-}
-
-export type CommandType = "run" | "make" | "table";
 
 export interface Option {
-    name: string;
+    name: string,
     type?: OptionType | undefined;
     options?: () => Record<string, string>;
     default?: ((...args: string[]) => string) | string;
     description?: string;
-    allowSpaces?: boolean;
     excludeIf?: string[];
 }
 
@@ -39,12 +29,6 @@ export interface Argument {
     name: string;
     type?: ArgumentType | undefined;
     description?: string;
-    allowSpaces?: boolean;
-    isOptional?: boolean;
 }
 
-export type ArgumentType = "namespaceOrPath" | "namespace" | "path" | "input";
-
-export interface Table {
-    title: string;
-}
+export type ArgumentType = "namespaceOrPath" | "namespace" | "path";
