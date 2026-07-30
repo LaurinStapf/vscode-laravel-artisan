@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const SeederMakeCommand: MakeCommand = {
+export const SeederMakeCommand: Command = {
     name: "make:seeder",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

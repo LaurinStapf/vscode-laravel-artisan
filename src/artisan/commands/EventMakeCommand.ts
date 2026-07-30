@@ -1,9 +1,9 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { forceOption } from "@src/artisan/options";
 
-export const EventMakeCommand: MakeCommand = {
+export const EventMakeCommand: Command = {
     name: "make:event",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

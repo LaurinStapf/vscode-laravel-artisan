@@ -1,9 +1,9 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { forceOption, testOptions } from "@src/artisan/options";
 
-export const NotificationMakeCommand: MakeCommand = {
+export const NotificationMakeCommand: Command = {
     name: "make:notification",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

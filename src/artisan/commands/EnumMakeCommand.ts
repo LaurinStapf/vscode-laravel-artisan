@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const EnumMakeCommand: MakeCommand = {
+export const EnumMakeCommand: Command = {
     name: "make:enum",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

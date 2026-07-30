@@ -140,7 +140,7 @@ export const runArtisanInTerminal = async (
 
     if (
         !artisanTerminal ||
-        !vscode.window.terminals.includes(§artisanTerminal)
+        !vscode.window.terminals.includes(artisanTerminal)
     ) {
         artisanTerminal = vscode.window.createTerminal({
             name: "Laravel Artisan",
@@ -151,4 +151,4 @@ export const runArtisanInTerminal = async (
     artisanTerminal.show();
     await vscode.commands.executeCommand("workbench.action.terminal.clear");
     artisanTerminal.sendText(fullCommand, true);
-}
+};

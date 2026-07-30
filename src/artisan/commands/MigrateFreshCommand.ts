@@ -1,9 +1,12 @@
-import { RunCommand } from "../types";
+import { Command } from "../types";
 
-export const MigrateFreshCommand: RunCommand = {
+export const MigrateFreshCommand: Command = {
     name: "migrate:fresh",
-    type: "run",
-    successMessage: "Refreshed database.",
+    runIn: "terminal",
+    confirmation: {
+        message: "This will drop all tables and re-run all migrations.",
+    },
+    arguments: [],
     options: [
         {
             name: "--database",
@@ -11,16 +14,8 @@ export const MigrateFreshCommand: RunCommand = {
             description: "The database connection to use",
         },
         {
-            name: "--drop-views",
-            description: "Drop all tables and views",
-        },
-        {
-            name: "--drop-types",
-            description: "Drop all table and types (Postgres only)",
-        },
-        {
             name: "--force",
-            description: "Force the operation to run when in production",
+            description: "Force the operation to run in production",
         },
         {
             name: "--path",
@@ -49,6 +44,14 @@ export const MigrateFreshCommand: RunCommand = {
             type: "input",
             description: "The class name of the root seeder",
             excludeIf: ["--seed"],
+        },
+        {
+            name: "--drop-views",
+            description: "Drop all tables and views",
+        },
+        {
+            name: "--drop-types",
+            description: "Drop all tables and types (Postgres only)",
         },
         {
             name: "--step",

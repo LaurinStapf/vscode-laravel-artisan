@@ -5,7 +5,10 @@ import * as vscode from "vscode";
 import { info } from "./support/logger";
 import { commandName } from "./commands";
 import { generateNamespaceCommand } from "./commands/generateNamespace";
-import { registerArtisanCommands, registerArtisanMakeCommands } from "./artisan/registry";
+import {
+    registerArtisanCommands,
+    registerArtisanMakeCommands,
+} from "./artisan/registry";
 
 export async function activate(context: vscode.ExtensionContext) {
     info("Activiating Laravel Artisan extension…");

@@ -89,16 +89,6 @@
                 "category": "Artisan"
             },
             {
-                "command": "artisan.cache.table",
-                "title": "Cache table",
-                "category": "Artisan"
-            },
-            {
-                "command": "artisan.compiled.clear",
-                "title": "Clear compiled classes",
-                "category": "Artisan"
-            },
-            {
                 "command": "artisan.config.cache",
                 "title": "Cache config",
                 "category": "Artisan"
@@ -109,23 +99,28 @@
                 "category": "Artisan"
             },
             {
-                "command": "artisan.database.seed",
+                "command": "artisan.db",
+                "title": "Start database CLI",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.db.seed",
                 "title": "Seed database",
                 "category": "Artisan"
             },
             {
-                "command": "artisan.docs",
-                "title": "Docs",
+                "command": "artisan.db.table",
+                "title": "Seed database",
                 "category": "Artisan"
             },
             {
-                "command": "artisan.down",
-                "title": "Down",
+                "command": "artisan.db.wipe",
+                "title": "Wipe database",
                 "category": "Artisan"
             },
             {
-                "command": "artisan.event.generate",
-                "title": "Generate events and listeners",
+                "command": "artisan.event.list",
+                "title": "List events",
                 "category": "Artisan"
             },
             {
@@ -304,28 +299,58 @@
                 "category": "Artisan"
             },
             {
-                "command": "artisan.migrate.install",
-                "title": "Install migration table",
-                "category": "Artisan"
-            },
-            {
                 "command": "artisan.migrate.refresh",
-                "title": "Refresh Migrations",
-                "category": "Artisan"
-            },
-            {
-                "command": "artisan.migrate.reset",
-                "title": "Reset Migrations",
+                "title": "Reset migrations",
                 "category": "Artisan"
             },
             {
                 "command": "artisan.migrate.rollback",
-                "title": "Rollback Migration",
+                "title": "Rollback migration",
                 "category": "Artisan"
             },
             {
-                "command": "artisan.optimize",
-                "title": "Optimize",
+                "command": "artisan.migrate.status",
+                "title": "Status of migration",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.model.show",
+                "title": "Show model",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.pail",
+                "title": "Pail",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.pest.dataset",
+                "title": "Create dataset",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.queue.clear",
+                "title": "Clear queue",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.queue.failed",
+                "title": "Failed queue",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.queue.flush",
+                "title": "Flush queue",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.queue.forget",
+                "title": "Forget queue",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.queue.retry",
+                "title": "Retry queue",
                 "category": "Artisan"
             },
             {
@@ -344,8 +369,23 @@
                 "category": "Artisan"
             },
             {
-                "command": "artisan.up",
-                "title": "Up",
+                "command": "artisan.schedule.list",
+                "title": "List schedule",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.schedule.test",
+                "title": "Test schedule",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.schema.dump",
+                "title": "Dump schedule",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.tinker",
+                "title": "Tinker",
                 "category": "Artisan"
             },
             {
@@ -356,6 +396,11 @@
             {
                 "command": "artisan.view.clear",
                 "title": "Clear views",
+                "category": "Artisan"
+            },
+            {
+                "command": "artisan.wayfinder.generate",
+                "title": "Generate wayfinder",
                 "category": "Artisan"
             }
         ]

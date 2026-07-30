@@ -1,9 +1,9 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 import { forceOption } from "../options";
 
-export const ChannelMakeCommand: MakeCommand = {
+export const ChannelMakeCommand: Command = {
     name: "make:channel",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

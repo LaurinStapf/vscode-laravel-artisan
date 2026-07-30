@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const PolicyMakeCommand: MakeCommand = {
+export const PolicyMakeCommand: Command = {
     name: "make:policy",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

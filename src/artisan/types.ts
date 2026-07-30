@@ -11,11 +11,11 @@ export type PostRunAction = "openGeneratedFile" | "none";
 export type CommandRunTarget = "background" | "terminal";
 
 export interface Confirmation {
-    message: string,
+    message: string;
 }
 
 export interface Option {
-    name: string,
+    name: string;
     type?: OptionType | undefined;
     options?: () => Record<string, string>;
     default?: ((...args: string[]) => string) | string;

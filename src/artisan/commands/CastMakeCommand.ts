@@ -1,8 +1,8 @@
-import { MakeCommand } from "../types";
+import { Command } from "../types";
 
-export const CastMakeCommand: MakeCommand = {
+export const CastMakeCommand: Command = {
     name: "make:cast",
-    type: "make",
+    postRun: "openGeneratedFile",
     arguments: [
         {
             name: "name",

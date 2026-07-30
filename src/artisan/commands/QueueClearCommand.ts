@@ -1,13 +1,14 @@
 import { Command } from "../types";
 
-export const KeyGenerateCommand: Command = {
-    name: "key:generate",
+export const QueueClearCommand: Command = {
+    name: "queue:clear",
     arguments: [],
     runIn: "terminal",
     options: [
         {
-            name: "--show",
-            description: "Display the key instead of modifying files",
+            name: "--queue",
+            type: "input",
+            description: "The name of the queue to clear",
         },
         {
             name: "--force",
