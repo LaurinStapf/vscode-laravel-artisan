@@ -92,7 +92,6 @@ A non-exhaustive list of currently included capabilities:
 ### App Lifecycle & Utilities
 
 - `auth:clear-resets`
-- `down`
 - `event:list`
 - `key:generate`
 - `model:show`
@@ -101,7 +100,6 @@ A non-exhaustive list of currently included capabilities:
 - `schedule:list`
 - `schedule:test`
 - `tinker`
-- `up`
 - `wayfinder:generate`
 
 ## Usage
