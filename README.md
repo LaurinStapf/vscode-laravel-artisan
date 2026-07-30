@@ -64,35 +64,45 @@ A non-exhaustive list of currently included capabilities:
 
 ### Database & Migrations
 
+- `db`
 - `db:seed`
+- `db:table`
+- `db:wipe`
 - `migrate`
 - `migrate:fresh`
-- `migrate:install`
 - `migrate:refresh`
-- `migrate:reset`
 - `migrate:rollback`
+- `migrate:status`
+- `schema:dump`
 
 ### Cache, Routes & Optimization
 
 - `cache:clear`
-- `cache:table`
-- `compiled:clear`
-- `config:cache`
-- `config:clear`
+- `queue:clear`
+- `queue:failed`
+- `queue:flush`
+- `queue:forget`
+- `queue:retry`
 - `route:cache`
 - `route:clear`
 - `route:list`
 - `view:cache`
 - `view:clear`
-- `optimize`
 
 ### App Lifecycle & Utilities
 
+- `auth:clear-resets`
 - `down`
-- `up`
-- `event:generate`
+- `event:list`
 - `key:generate`
-- `docs`
+- `model:show`
+- `pail`
+- `pest:dataset`
+- `schedule:list`
+- `schedule:test`
+- `tinker`
+- `up`
+- `wayfinder:generate`
 
 ## Usage
 
