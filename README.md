@@ -78,6 +78,8 @@ A non-exhaustive list of currently included capabilities:
 ### Cache, Routes & Optimization
 
 - `cache:clear`
+- `config:cache`
+- `config:clear`
 - `queue:clear`
 - `queue:failed`
 - `queue:flush`
